@@ -1,10 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Blob from "./Blob";
-import { motion } from "framer-motion";
+import { animate, motion, useMotionValue } from "framer-motion";
 import styled from "styled-components";
 
 const Hero = () => {
     const [isBlobLoading, setIsBlobLoading] = useState<boolean>(true);
+    const zIndex = useMotionValue(30);
+
+    useEffect(() => {
+        if(!isBlobLoading) {
+            animate(zIndex, -10, { delay: 1.2 });
+        }
+    }, [isBlobLoading, zIndex]);
 
     const titleVariants = {
         hidden: {
@@ -76,7 +83,7 @@ const Hero = () => {
             <motion.div variants={scrollContainerVariants} animate="animate" className="absolute bottom-8 translate-x-[50%] left-[50%] w-8 h-14 grid place-items-center pb-4 border-2 border-solid border-white rounded-[25px]">
                 <StyledDiv />
             </motion.div>
-            <div className="absolute top-0 left-0 flex w-screen h-screen z-30">
+            <motion.div className={`absolute top-0 left-0 flex w-screen h-screen`} style={{zIndex}}>
                 <motion.div variants={blinderVariants} custom={1} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} className="h-screen w-[10vw] bg-slate-400 origin-top"></motion.div>
                 <motion.div variants={blinderVariants} custom={2} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} className="h-screen w-[10vw] bg-slate-400 origin-top"></motion.div>
                 <motion.div variants={blinderVariants} custom={3} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} className="h-screen w-[10vw] bg-slate-400 origin-top"></motion.div>
@@ -87,7 +94,7 @@ const Hero = () => {
                 <motion.div variants={blinderVariants} custom={8} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} className="h-screen w-[10vw] bg-slate-400 origin-top"></motion.div>
                 <motion.div variants={blinderVariants} custom={9} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} className="h-screen w-[10vw] bg-slate-400 origin-top"></motion.div>
                 <motion.div variants={blinderVariants} custom={10} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} className="h-screen w-[10vw] bg-slate-400 origin-top"></motion.div>
-            </div>
+            </motion.div>
         </>
     )
 }
