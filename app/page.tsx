@@ -1,4 +1,4 @@
-import React from "react";
+import About from "./component/About";
 import Navbar from "./component/navbar/Navbar";
 import Hero from "./component/Hero";
 
@@ -8,6 +8,9 @@ const Home = () => {
     <main> 
         <Navbar /> 
         <Hero />
+        <div className="h-screen"></div>
+        <About />
+        <div className="h-screen"></div>
     </main>
   )
 }
