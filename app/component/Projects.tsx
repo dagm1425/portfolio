@@ -1,9 +1,12 @@
 "use client";
 
-import { ProjectTyping } from "../typings";
+import { useState } from "react";
+import { ModalTyping, ProjectTyping } from "../typings";
+import Modal from "./Modal"
 import Project from "./Project"
 
 const Projects = () => {    
+    const [modal, setModal] = useState<ModalTyping>({isActive: false, project: 0});
     const projects: ProjectTyping[] = [
         {
           title: 'ChatApp',
@@ -29,10 +32,11 @@ const Projects = () => {
           {
             projects.map((project, i) => {
               const isLast = i === projects.length - 1;
-              return <Project key={i} title={project.title} isLast={isLast}/>
+              return <Project key={i} index={i} title={project.title} setModal={setModal} isLast={isLast}/>
             })
           }
         </div>
+        <Modal modal={modal} projects={projects}/>
       </section>
     )
 }
