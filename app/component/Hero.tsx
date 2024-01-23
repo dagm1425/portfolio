@@ -69,6 +69,32 @@ const Hero = () => {
         }),
     };
 
+    const loaderTextVariants = {
+        initial: {
+            y: -84
+        },
+        animate: {
+            y: [-84, 0],
+            transition: {
+                duration: 1,
+                repeat: Infinity,
+            }
+        }
+    }
+
+    const loaderContainerVariants = {
+        initial: {
+            scale: 1,
+            x: "-50%",
+            y: "-50%"
+        },
+        animate: {
+            scale: 0,
+            x: "-50%",
+            y: "-50%"
+        }
+    }
+
     return (
         <>
             <Blob setIsBlobLoading={setIsBlobLoading}/>
@@ -83,7 +109,7 @@ const Hero = () => {
             <motion.div variants={scrollContainerVariants} animate="animate" className="absolute bottom-8 translate-x-[50%] left-[50%] w-8 h-14 grid place-items-center pb-4 border-2 border-solid border-white rounded-[25px]">
                 <StyledDiv />
             </motion.div>
-            <motion.div className={`absolute top-0 left-0 flex w-screen h-screen`} style={{zIndex}}>
+            <motion.div className={`absolute top-0 left-0 w-full h-screen flex`} style={{zIndex}}>
                 <motion.div variants={blinderVariants} custom={1} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} className="h-screen w-[10vw] bg-slate-400 origin-top"></motion.div>
                 <motion.div variants={blinderVariants} custom={2} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} className="h-screen w-[10vw] bg-slate-400 origin-top"></motion.div>
                 <motion.div variants={blinderVariants} custom={3} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} className="h-screen w-[10vw] bg-slate-400 origin-top"></motion.div>
@@ -94,6 +120,10 @@ const Hero = () => {
                 <motion.div variants={blinderVariants} custom={8} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} className="h-screen w-[10vw] bg-slate-400 origin-top"></motion.div>
                 <motion.div variants={blinderVariants} custom={9} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} className="h-screen w-[10vw] bg-slate-400 origin-top"></motion.div>
                 <motion.div variants={blinderVariants} custom={10} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} className="h-screen w-[10vw] bg-slate-400 origin-top"></motion.div>
+            </motion.div>
+            <motion.div variants={loaderContainerVariants} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} className="absolute top-1/2 left-1/2 h-[84px] text-8xl uppercase font-bold overflow-hidden z-30">
+                <motion.h1 variants={loaderTextVariants} initial="initial" animate="animate" className="leading-[.85]">d.n</motion.h1>
+                <motion.h1 variants={loaderTextVariants} initial="initial" animate="animate" className="leading-[.85]">d.n</motion.h1>
             </motion.div>
         </>
     )
