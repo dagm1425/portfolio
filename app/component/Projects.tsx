@@ -1,30 +1,34 @@
 "use client";
 
-import { useState } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { ModalTyping, ProjectTyping } from "../typings";
 import Modal from "./Modal"
 import Project from "./Project"
 
-const Projects = () => {    
-    const [modal, setModal] = useState<ModalTyping>({isActive: false, project: 0});
-    const projects: ProjectTyping[] = [
-        {
-          title: 'ChatApp',
-          src: "chatapp.jpg",
-        },
-        {
-          title: 'Shopping Cart',
-          src: "shopping-cart.jpg",
-        },
-        {
-          title: 'Commercial Project',
-          src: "commercial-project.jpg",
-        },
-        {
-          title: 'Portfolio Website',
-          src: "portfolio-website.jpg",
-        },
-      ];
+interface ProjectsProps {
+  modal: ModalTyping
+  setModal: Dispatch<SetStateAction<ModalTyping>>
+}
+
+const Projects: React.FC<ProjectsProps> = ({ modal, setModal }) => {    
+  const projects: ProjectTyping[] = [
+    {
+      title: 'ChatApp',
+      src: "chat-app.jpg",
+    },
+    {
+      title: 'Shopping Cart',
+      src: "shopping-cart.jpg",
+    },
+    {
+      title: 'Commercial Project',
+      src: "commercial-project.jpg",
+    },
+    {
+      title: 'Portfolio Website',
+      src: "portfolio-website.jpg",
+    },
+  ];
 
     return (
       <section className="h-[85vh] flex items-center justify-center">
