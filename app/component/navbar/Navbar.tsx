@@ -1,10 +1,13 @@
-"use client";
-
+"use client"
 import React, { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import AnimatedLink from "./AnimatedLink";
+import { AnimatePresence, motion } from "framer-motion";
 
-const Navbar = () => {
+interface NavbarProps {
+    setIsLinkActive: (value: boolean) => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({ setIsLinkActive }) => {
     const [isScrolling, setIsScrolling] = useState(false);
   
     const handleScroll = () => {
@@ -26,16 +29,16 @@ const Navbar = () => {
       <>
         <AnimatePresence>
           {isScrolling ? (
-            <ScrollNavbar isScrolling={isScrolling} />
+            <ScrollNavbar setIsLinkActive={setIsLinkActive} isScrolling={isScrolling} />
           ) : (
-            <FixedNavbar />
+            <FixedNavbar setIsLinkActive={setIsLinkActive}/>
           )}
         </AnimatePresence>
       </>
     );
 }
 
-const FixedNavbar = () => {
+const FixedNavbar: React.FC<NavbarProps> = ({ setIsLinkActive }) => {
     const navLinks = [
         { title: "About", href: "#about" },
         { title: "Projects", href: "#projects" },
@@ -47,7 +50,9 @@ const FixedNavbar = () => {
             {navLinks.map((link, i) => {
                 return (
                     <div key={i}
-                      className="relative">
+                      className="relative" 
+                      onMouseEnter={() => setIsLinkActive(true)}
+                      onMouseLeave={() => setIsLinkActive(false)}>
                         <AnimatedLink title={link.title}/>
                     </div>
                 )
@@ -57,10 +62,11 @@ const FixedNavbar = () => {
 }
 
 interface ScrollNavbarProps {
+    setIsLinkActive: (value: boolean) => void;
     isScrolling: boolean;
 }
 
-const ScrollNavbar: React.FC<ScrollNavbarProps> = ({ isScrolling }) => {
+const ScrollNavbar: React.FC<ScrollNavbarProps> = ({ setIsLinkActive, isScrolling }) => {
     const navLinks = [
         { title: "About", href: "#about" },
         { title: "Projects", href: "#projects" },
@@ -100,7 +106,9 @@ const ScrollNavbar: React.FC<ScrollNavbarProps> = ({ isScrolling }) => {
             {navLinks.map((link, i) => {
                 return (
                     <div key={i}
-                      className="relative">
+                      className="relative" 
+                      onMouseEnter={() => setIsLinkActive(true)}
+                      onMouseLeave={() => setIsLinkActive(false)}>
                         <AnimatedLink title={link.title}/>
                     </div>
                 )
