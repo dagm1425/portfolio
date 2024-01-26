@@ -22,7 +22,6 @@ const Modal: React.FC<ModalProps> = ({ modal, projects }) => {
     const { isActive, project } = modal;
     const container = useRef<HTMLDivElement>(null);
     const cursor = useRef<HTMLDivElement>(null);
-    const cursorLabel = useRef<HTMLDivElement>(null);
 
     useEffect( () => {
         let xMoveContainer = gsap.quickTo(container.current, "left", {duration: 0.8, ease: "power3"})
@@ -30,10 +29,6 @@ const Modal: React.FC<ModalProps> = ({ modal, projects }) => {
     
         let xMoveCursor = gsap.quickTo(cursor.current, "left", {duration: 0.5, ease: "power3"})
         let yMoveCursor = gsap.quickTo(cursor.current, "top", {duration: 0.5, ease: "power3"})
-    
-    
-        let xMoveCursorLabel = gsap.quickTo(cursorLabel.current, "left", {duration: 0.45, ease: "power3"})
-        let yMoveCursorLabel = gsap.quickTo(cursorLabel.current, "top", {duration: 0.45, ease: "power3"})
 
         window.addEventListener('mousemove', (e) => {
           const { pageX, pageY } = e;
@@ -43,9 +38,6 @@ const Modal: React.FC<ModalProps> = ({ modal, projects }) => {
           
           xMoveCursor(pageX)
           yMoveCursor(pageY)
-    
-          xMoveCursorLabel(pageX)
-          yMoveCursorLabel(pageY)
         })
       }, [])
 
@@ -54,8 +46,7 @@ const Modal: React.FC<ModalProps> = ({ modal, projects }) => {
             <motion.div ref={container} className="absolute w-[300px] h-[400px] flex items-center justify-center overflow-hidden pointer-events-none" variants={ScaleVariants} initial="initial" animate={isActive? "open" : "close"}>
                 <Image src={`/images/${projects[project].src}`} alt={projects[project].title} width={300} height={200} className="rotate-6"/>
             </motion.div>
-            <motion.div ref={cursor} className="absolute flex items-center justify-center w-14 h-14 bg-[#455CE9] text-white rounded-[50%] pointer-events-none" variants={ScaleVariants} initial="initial" animate={isActive? "open" : "close"}></motion.div>
-            <motion.div ref={cursorLabel} className="absolute flex items-center justify-center w-14 h-14 bg-transparent text-white rounded-[50%] pointer-events-none" variants={ScaleVariants} initial="initial" animate={isActive? "open" : "close"}><GoArrowUpRight style={{ fontSize: 32}}/></motion.div>
+            <motion.div ref={cursor} className="absolute flex items-center justify-center w-14 h-14 bg-[#455CE9] text-white rounded-[50%] pointer-events-none" variants={ScaleVariants} initial="initial" animate={isActive? "open" : "close"}><GoArrowUpRight style={{ fontSize: 32}}/></motion.div>
         </>
     )
 }
