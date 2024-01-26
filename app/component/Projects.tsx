@@ -15,18 +15,22 @@ const Projects: React.FC<ProjectsProps> = ({ modal, setModal }) => {
     {
       title: 'ChatApp',
       src: "chat-app.jpg",
+      href: "https://github.com/dagm1425/chat-app"
     },
     {
       title: 'Shopping Cart',
       src: "shopping-cart.jpg",
+      href: "https://github.com/dagm1425/shopping-cart"
     },
     {
       title: 'Commercial Project',
       src: "commercial-project.jpg",
+      href: ""
     },
     {
       title: 'Portfolio Website',
       src: "portfolio-website.jpg",
+      href: "https://github.com/dagm1425/portfolio"
     },
   ];
 
@@ -36,7 +40,7 @@ const Projects: React.FC<ProjectsProps> = ({ modal, setModal }) => {
           {
             projects.map((project, i) => {
               const isLast = i === projects.length - 1;
-              return <Project key={i} index={i} title={project.title} setModal={setModal} isLast={isLast}/>
+              return <Project key={i} index={i} project={project} setModal={setModal} isLast={isLast}/>
             })
           }
         </div>
