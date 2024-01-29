@@ -2,13 +2,13 @@
 
 import Image from "next/image";
 import React, { useEffect, useRef } from "react";
-import { ProjectTyping } from "../typings";
+import { ModalTyping, ProjectTyping } from "../typings";
 import { motion } from "framer-motion";
 import { GoArrowUpRight } from "react-icons/go";
 import gsap from "gsap";
 
 interface ModalProps {
-    modal: { isActive: boolean, project: number },
+    modal: ModalTyping,
     projects: ProjectTyping[],
 }
 

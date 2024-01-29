@@ -1,10 +1,10 @@
 "use client"
-import React, { useEffect, useState } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import AnimatedLink from "./AnimatedLink";
 import { AnimatePresence, motion } from "framer-motion";
 
 interface NavbarProps {
-    setIsLinkActive: (value: boolean) => void;
+    setIsLinkActive: Dispatch<SetStateAction<boolean>>;
 }
 
 const Navbar: React.FC<NavbarProps> = ({ setIsLinkActive }) => {
