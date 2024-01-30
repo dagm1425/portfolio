@@ -8,6 +8,7 @@ import Projects from "./component/Projects";
 import TechStack from "./component/TechStack";
 import Hero from "./component/Hero";
 import { ModalTyping } from "./typings";
+import Contact from "./component/Contact";
 
 const Home = () => {
   const [isLinkActive, setIsLinkActive] = useState<boolean>(false);
@@ -22,6 +23,7 @@ const Home = () => {
         <div className="h-screen"></div>
         <Projects modal={modal} setModal={setModal}/>
         <TechStack />
+        <Contact setIsLinkActive={setIsLinkActive}/>
         <CustomCursor isLinkActive={isLinkActive} modal={modal}/>
     </main>
   )
