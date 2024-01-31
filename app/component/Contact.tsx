@@ -56,7 +56,7 @@ const Contact: React.FC<ContactProps> = ({ setIsLinkActive }) => {
                         {socials.map((social, i) => {
                             return (
                                 <div key={i}
-                                 className="relative" 
+                                 className="relative border-b" 
                                  onMouseEnter={() => setIsLinkActive(true)}
                                  onMouseLeave={() => setIsLinkActive(false)}>
                                     <AnimatedLink title={social.title} href={social.href} />
