@@ -24,7 +24,7 @@ const Hero = () => {
             transition: {
                 duration: 0.5,
                 ease: [.215,.61,.355,1],
-                delay: 7 + (i * 0.05), 
+                delay: 1.2 + (i * 0.05), 
             }
         }),
     };
@@ -40,7 +40,7 @@ const Hero = () => {
             transition: {
                 duration: 0.5,
                 ease: [.215,.61,.355,1],
-                delay: 7 + 0.65 + (i * 0.2), 
+                delay: 1.6 + (i * 0.2), 
             }
         }),
     };
@@ -64,7 +64,7 @@ const Hero = () => {
             transition: {
                 duration: 0.7,
                 ease: [.215,.61,.355,1],
-                delay: i * 0.05, 
+                delay: i * 0.07, 
             }
         }),
     };
@@ -74,7 +74,7 @@ const Hero = () => {
             y: -84
         },
         animate: {
-            y: [-84, 0],
+            y: 0,
             transition: {
                 duration: 1,
                 repeat: Infinity,
@@ -84,14 +84,14 @@ const Hero = () => {
 
     const loaderContainerVariants = {
         initial: {
-            scale: 1,
+            opacity: 1,
             x: "-50%",
             y: "-50%"
         },
         animate: {
-            scale: 0,
+            opacity: 0,
             x: "-50%",
-            y: "-50%"
+            y: "-50%",
         }
     }
 
