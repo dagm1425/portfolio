@@ -113,9 +113,10 @@ const Hero = () => {
                 <motion.p variants={subtitleVariants} initial="hidden" animate={!isBlobLoading ? "show" : "hidden"} custom={1} className="text-3xl text-white uppercase font-normal">front-end</motion.p>
                 <motion.p variants={subtitleVariants} initial="hidden" animate={!isBlobLoading ? "show" : "hidden"} custom={2} className="text-3xl text-white uppercase font-normal">developer</motion.p>
             </motion.div>
-            <motion.div variants={subtitleVariants2} initial="hidden" animate={!isBlobLoading ? "show" : "hidden"} className="absolute bottom-64 left-24 flex items-center gap-6 text-white uppercase -z-10">
+            <motion.div variants={subtitleVariants2} initial="hidden" animate={!isBlobLoading ? "show" : "hidden"} className="absolute bottom-64 left-24 flex items-center gap-8 text-white uppercase -z-10">
                 <div>
-                    <p className="text-3xl">working<br/>worldwide</p>
+                    <p className="text-3xl mb-2">working</p>
+                    <p className="text-3xl">worldwide</p>
                 </div>
                 <PiGlobeLight style={{ fontSize: "2.5rem" }} />
             </motion.div>
