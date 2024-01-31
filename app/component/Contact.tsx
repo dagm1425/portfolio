@@ -32,18 +32,18 @@ const Contact: React.FC<ContactProps> = ({ setIsLinkActive }) => {
                     <p className="text-white uppercase">cell: +251 953 40 78 88</p>
                     <p className="text-white uppercase mb-6">email: dagmawinebeyu3@gmail.com</p>
                     <div className="flex gap-8 text-white">
-                        <a href="" className="flex items-center text-sm uppercase gap-1"
+                        <a href="" className="text-sm uppercase"
                         onMouseEnter={() => setIsLinkActive(true)}
                         onMouseLeave={() => setIsLinkActive(false)}>
                             LinkedIn
                         </a>
-                        <a href="" className="flex items-center text-sm uppercase gap-1"
+                        <a href="" className="text-sm uppercase"
                         onMouseEnter={() => setIsLinkActive(true)}
                         onMouseLeave={() => setIsLinkActive(false)}
                         >
                             X/Twitter
                         </a>
-                        <a href="" className="flex items-center text-sm uppercase gap-1"
+                        <a href="" className="text-sm uppercase"
                         onMouseEnter={() => setIsLinkActive(true)}
                         onMouseLeave={() => setIsLinkActive(false)}
                         >
