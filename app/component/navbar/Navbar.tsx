@@ -7,6 +7,12 @@ interface NavbarProps {
     setIsLinkActive: Dispatch<SetStateAction<boolean>>;
 }
 
+const navLinks = [
+  { title: "About", href: "#about" },
+  { title: "Projects", href: "#projects" },
+  { title: "Contact", href: "#contact" },
+];
+
 const Navbar: React.FC<NavbarProps> = ({ setIsLinkActive }) => {
     const [isScrolling, setIsScrolling] = useState(false);
   
@@ -39,12 +45,6 @@ const Navbar: React.FC<NavbarProps> = ({ setIsLinkActive }) => {
 }
 
 const FixedNavbar: React.FC<NavbarProps> = ({ setIsLinkActive }) => {
-    const navLinks = [
-        { title: "About", href: "#about" },
-        { title: "Projects", href: "#projects" },
-        { title: "Contact", href: "#contact" },
-    ];
-
     return (
         <nav className="fixed top-4 w-full flex justify-center items-center gap-16 text-white text-md uppercase px-8 py-2 z-10">
             {navLinks.map((link, i) => {
@@ -67,12 +67,6 @@ interface ScrollNavbarProps {
 }
 
 const ScrollNavbar: React.FC<ScrollNavbarProps> = ({ setIsLinkActive, isScrolling }) => {
-    const navLinks = [
-        { title: "About", href: "#about" },
-        { title: "Projects", href: "#projects" },
-        { title: "Contact", href: "#contact" },
-    ];
-
     const NavAnimations = {
         initial: {
           y: -50,
