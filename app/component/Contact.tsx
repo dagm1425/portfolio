@@ -1,4 +1,4 @@
-import React, { Dispatch, SetStateAction, useRef } from "react";
+import React, { Dispatch, SetStateAction, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 // import { FaInstagram } from "react-icons/fa";
 // import { CiLinkedin } from "react-icons/ci";
@@ -11,20 +11,35 @@ interface ContactProps {
 
 const Contact: React.FC<ContactProps> = ({ setIsLinkActive }) => {
     const form = useRef<HTMLFormElement>(null);
+    const [isSendingMsg, setIsSendingMsg] = useState<boolean>(false);
+    const [isMsgSent, setIsMsgSent] = useState<boolean>(false);
+    const [isMsgNotSent, setIsMsgNotSent] = useState<boolean>(false);
     
     const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        setIsSendingMsg(true)
     
         emailjs.sendForm('service_pk31aoc', 'template_wgzyvn9', form.current as HTMLFormElement, 'QK7CEwiy3Rl9RTNYm')
           .then(() => {
             (e.target as HTMLFormElement).reset();
+            setIsSendingMsg(false);
+            setIsMsgSent(true);
+            setTimeout(() => {
+                setIsMsgSent(false);
+            }, 3000);
           }, (error: any) => {
+              setIsMsgNotSent(true);
               console.log(error.text);
+              setTimeout(() => {
+                setIsMsgNotSent(false);
+            }, 3000);
           });
+        
+          setIsMsgSent(false);
     };
 
     return (
-        <section className="px-32 py-20">
+        <section className="relative px-32 py-20">
             <div className="font-teko text-[9rem] leading-none text-white uppercase font-semibold text-left">let&apos;s work</div>
             <div className="font-teko text-[9rem] leading-none text-white uppercase font-semibold text-center mb-20">together</div>
             <div className="flex justify-between">
@@ -65,6 +80,14 @@ const Contact: React.FC<ContactProps> = ({ setIsLinkActive }) => {
                     </button>
                 </form>
             </div>
+           {(isSendingMsg || isMsgSent || isMsgNotSent) && 
+            <div className="absolute bottom-12 left-12 bg-slate-200 p-3 rounded-md">
+                <div className="text-slate-700 text-md font-semibold uppercase">
+                    {isSendingMsg && "Sending message..."}
+                    {isMsgSent && "Message sent!"}
+                    {isMsgNotSent && "Message not sent!"} 
+                </div>
+            </div>}
         </section>
     )
 }
