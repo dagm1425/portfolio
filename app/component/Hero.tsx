@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Blob from "./Blob";
 import { animate, motion, useMotionValue } from "framer-motion";
 import { GoArrowDownRight } from "react-icons/go";
+import { PiGlobeLight } from "react-icons/pi";
 
 const Hero = () => {
     const [isBlobLoading, setIsBlobLoading] = useState<boolean>(true);
@@ -43,6 +44,22 @@ const Hero = () => {
                 delay: 1.6 + (i * 0.2), 
             }
         }),
+    };
+
+    const subtitleVariants2 = {
+        hidden: {
+            x: "-100%",
+            opacity: 0
+        },
+        show: {
+            x: 0,
+            opacity: 1,
+            transition: {
+                duration: 0.4,
+                ease: [.215,.61,.355,1],
+                delay: 2.3
+            }
+        }
     };
 
     const blinderVariants = {
@@ -95,6 +112,12 @@ const Hero = () => {
                 <GoArrowDownRight style={{ color: "white", fontSize: "2rem", marginBottom: "1rem" }} />
                 <motion.p variants={subtitleVariants} initial="hidden" animate={!isBlobLoading ? "show" : "hidden"} custom={1} className="text-3xl text-white uppercase font-normal">front-end</motion.p>
                 <motion.p variants={subtitleVariants} initial="hidden" animate={!isBlobLoading ? "show" : "hidden"} custom={2} className="text-3xl text-white uppercase font-normal">developer</motion.p>
+            </motion.div>
+            <motion.div variants={subtitleVariants2} initial="hidden" animate={!isBlobLoading ? "show" : "hidden"} className="absolute bottom-64 left-24 flex items-center gap-6 text-white uppercase">
+                <div>
+                    <p className="text-3xl">working<br/>worldwide</p>
+                </div>
+                <PiGlobeLight style={{ fontSize: "2.5rem" }} />
             </motion.div>
             <motion.div className={`absolute top-0 left-0 w-full h-screen flex`} style={{zIndex}}>
                 <motion.div variants={blinderVariants} custom={1} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} className="h-screen w-[10vw] bg-slate-400 origin-top"></motion.div>
