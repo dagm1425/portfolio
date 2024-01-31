@@ -4,6 +4,7 @@ import emailjs from "@emailjs/browser";
 // import { CiLinkedin } from "react-icons/ci";
 // import { FaXTwitter } from "react-icons/fa6";
 import { RiSendPlaneLine } from "react-icons/ri";
+import AnimatedLink from "./navbar/AnimatedLink";
 
 interface ContactProps {
     setIsLinkActive: Dispatch<SetStateAction<boolean>>;
@@ -14,7 +15,12 @@ const Contact: React.FC<ContactProps> = ({ setIsLinkActive }) => {
     const [isSendingMsg, setIsSendingMsg] = useState<boolean>(false);
     const [isMsgSent, setIsMsgSent] = useState<boolean>(false);
     const [isMsgNotSent, setIsMsgNotSent] = useState<boolean>(false);
-    
+    const socials = [
+        { title: 'LinkedIn', href: 'https://www.linkedin.com/' },
+        { title: 'X/Twitter', href: 'https://www.twitter.com/' },
+        { title: 'Instagram', href: 'https://www.instagram.com/' },
+    ];
+
     const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         setIsSendingMsg(true)
@@ -46,24 +52,17 @@ const Contact: React.FC<ContactProps> = ({ setIsLinkActive }) => {
                 <div>
                     <p className="text-white uppercase">cell: +251 953 40 78 88</p>
                     <p className="text-white uppercase mb-6">email: dagmawinebeyu3@gmail.com</p>
-                    <div className="flex gap-8 text-white">
-                        <a href="" className="text-sm uppercase"
-                        onMouseEnter={() => setIsLinkActive(true)}
-                        onMouseLeave={() => setIsLinkActive(false)}>
-                            LinkedIn
-                        </a>
-                        <a href="" className="text-sm uppercase"
-                        onMouseEnter={() => setIsLinkActive(true)}
-                        onMouseLeave={() => setIsLinkActive(false)}
-                        >
-                            X/Twitter
-                        </a>
-                        <a href="" className="text-sm uppercase"
-                        onMouseEnter={() => setIsLinkActive(true)}
-                        onMouseLeave={() => setIsLinkActive(false)}
-                        >
-                            Instagram
-                        </a>
+                    <div className="flex gap-8 text-white text-sm">
+                        {socials.map((social, i) => {
+                            return (
+                                <div key={i}
+                                 className="relative" 
+                                 onMouseEnter={() => setIsLinkActive(true)}
+                                 onMouseLeave={() => setIsLinkActive(false)}>
+                                    <AnimatedLink title={social.title} href={social.href} />
+                                </div>
+                            )
+                        })}
                     </div>
                 </div>
                 <form ref={form} onSubmit={sendEmail}>
@@ -72,11 +71,12 @@ const Contact: React.FC<ContactProps> = ({ setIsLinkActive }) => {
                         <input name="user_email" type="email" placeholder="EMAIL" className="w-[47%] text-xl text-white bg-transparent py-4 px-5 border border-solid border-white rounded-[35px]"/>
                     </div>
                     <textarea name="message" rows={4} cols={65} required placeholder="MESSAGE" className="text-xl text-white bg-transparent py-4 px-5 resize-none border border-solid border-white rounded-[35px]"/>
-                    <button className="block text-lg text-white mx-auto mt-6 uppercase border-none outline-none" 
+                    <button className="block flex items-center gap-1.5 text-lg text-white mx-auto mt-6 uppercase border-none outline-none" 
                         onMouseEnter={() => setIsLinkActive(true)}
                         onMouseLeave={() => setIsLinkActive(false)}
                         onClick={() => form.current?.requestSubmit()}>
-                        send <RiSendPlaneLine style={{ display: "inline", color: "white", fontSize: "1.25rem", marginTop: "-4px"}}/>
+                        <AnimatedLink title="send" />
+                        <RiSendPlaneLine style={{ display: "inline", color: "white", fontSize: "1.25rem", marginTop: "0"}}/>
                     </button>
                 </form>
             </div>
