@@ -81,7 +81,7 @@ const TechStack = () => {
   }, [])
 
   return (
-    <div ref={container} className='my-8 px-4 flex flex-col gap-4 overflow-hidden'>
+    <div ref={container} className='py-36 px-4 flex flex-col gap-4 overflow-hidden'>
       <Row svgData={svgData} x={x} />
       <Row svgData={svgData2} x={x2} />
     </div>

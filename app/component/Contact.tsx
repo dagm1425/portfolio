@@ -45,7 +45,7 @@ const Contact: React.FC<ContactProps> = ({ setIsLinkActive }) => {
     };
 
     return (
-        <section className="relative px-32 py-20 pb-0">
+        <section className="relative px-32 pb-0">
             <div className="font-teko text-[9rem] leading-none text-white uppercase font-semibold text-left">let&apos;s work</div>
             <div className="font-teko text-[9rem] leading-none text-white uppercase font-semibold text-center mb-20">together</div>
             <div className="flex justify-between">

@@ -21,12 +21,11 @@ const About = () => {
   });
 
   return (
-    <p 
-    ref={element}         
-    className="flex text-6xl px-64 py-10 max-w[1280px] flex-wrap text-white"
-    >
-      {animatedWords}
-    </p>
+    <section className='px-64 py-48'>
+      <p ref={element} className="flex text-6xl flex-wrap text-white">
+        {animatedWords}
+      </p>
+    </section>
   )
 }
 

@@ -18,9 +18,7 @@ const Home = () => {
     <main> 
         <Navbar setIsLinkActive={setIsLinkActive}/> 
         <Hero />
-        <div className="h-screen"></div>
         <About />
-        <div className="h-screen"></div>
         <Projects modal={modal} setModal={setModal}/>
         <TechStack />
         <Contact setIsLinkActive={setIsLinkActive}/>
