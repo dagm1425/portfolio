@@ -40,7 +40,7 @@ const Word: React.FC<WordProps> = ({ children, progress, range }) => {
   const opacity = useTransform(progress, range, [0, 1])
 
   return (
-    <span className="relative mr-3 mt-3">
+    <span className="relative mr-3 leading-tight">
       <span className="absolute opacity-10">
         {children}
       </span>
