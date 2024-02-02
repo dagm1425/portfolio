@@ -5,6 +5,7 @@ import emailjs from "@emailjs/browser";
 // import { FaXTwitter } from "react-icons/fa6";
 import { RiSendPlaneLine } from "react-icons/ri";
 import AnimatedLink from "./navbar/AnimatedLink";
+import { motion, useInView } from "framer-motion";
 
 interface ContactProps {
     setIsLinkActive: Dispatch<SetStateAction<boolean>>;
@@ -15,11 +16,33 @@ const Contact: React.FC<ContactProps> = ({ setIsLinkActive }) => {
     const [isSendingMsg, setIsSendingMsg] = useState<boolean>(false);
     const [isMsgSent, setIsMsgSent] = useState<boolean>(false);
     const [isMsgNotSent, setIsMsgNotSent] = useState<boolean>(false);
+    const title = useRef<HTMLDivElement>(null);
+    const isInView = useInView(title, { once: true });
     const socials = [
         { title: 'LinkedIn', href: 'https://www.linkedin.com/' },
         { title: 'X/Twitter', href: 'https://www.twitter.com/' },
         { title: 'Instagram', href: 'https://www.instagram.com/' },
     ];
+    const titleVariants = {
+        initial: {
+            opacity: 0,
+            rotateX: 90,
+            translateY: "60vh",
+            translateX: -20,
+        },
+        animate: {
+            opacity: 1,
+            rotateX: 0,
+            translateY: 0,
+            translateX: 0,
+            transition: {
+                opacity: { duration: 0.35 },
+                duration: 0.65,
+                ease: [.215,.61,.355,1],
+                delay: 1.2, 
+            }
+        },
+    };
 
     const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -46,8 +69,16 @@ const Contact: React.FC<ContactProps> = ({ setIsLinkActive }) => {
 
     return (
         <section className="relative px-32 pb-0">
-            <div className="font-teko text-[9rem] leading-none text-white uppercase font-semibold text-left">let&apos;s work</div>
-            <div className="font-teko text-[9rem] leading-none text-white uppercase font-semibold text-center mb-20">together</div>
+            {/* <div className="font-teko text-[9rem] leading-none text-white uppercase font-semibold text-left">let&apos;s work</div> */}
+            {/* <div className="font-teko text-[9rem] leading-none text-white uppercase font-semibold text-center mb-20">together</div> */}
+            <div ref={title} className="perspective-[120px] perspective-origin-top overflow-hidden">
+                <motion.div variants={titleVariants} initial="initial" animate={isInView ? "animate" : "initial"}>
+                    <h1 className="font-teko text-[9rem] leading-none text-white uppercase font-semibold text-left">let&apos;s work</h1>
+                </motion.div>
+                <motion.div variants={titleVariants} initial="initial" animate={isInView ? "animate" : "initial"}>
+                    <h1 className="font-teko text-[9rem] leading-none text-white uppercase font-semibold text-center mb-20">together</h1>
+                </motion.div>
+            </div>
             <div className="flex justify-between">
                 <div>
                     <p className="text-white uppercase">cell: +251 953 40 78 88</p>
