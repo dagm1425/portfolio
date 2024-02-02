@@ -1,11 +1,17 @@
-import React, { useEffect, useState } from "react";
+"use client";
+
+import React, { Dispatch, SetStateAction, useEffect } from "react";
 import Blob from "./Blob";
 import { animate, motion, useMotionValue } from "framer-motion";
 import { GoArrowDownRight } from "react-icons/go";
 import { PiGlobeLight } from "react-icons/pi";
 
-const Hero = () => {
-    const [isBlobLoading, setIsBlobLoading] = useState<boolean>(true);
+interface HeroProps {
+    isBlobLoading: boolean,
+    setIsBlobLoading: Dispatch<SetStateAction<boolean>>,
+}
+
+const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
     const zIndex = useMotionValue(30);
 
     useEffect(() => {

@@ -13,11 +13,12 @@ import Contact from "./component/Contact";
 const Home = () => {
   const [isLinkActive, setIsLinkActive] = useState<boolean>(false);
   const [modal, setModal] = useState<ModalTyping>({isActive: false, project: 0});
+  const [isBlobLoading, setIsBlobLoading] = useState<boolean>(true);
 
   return (
-    <main> 
+    <main className={`${isBlobLoading ? "h-screen overflow-y-hidden" : "h-auto overflow-y-auto"}`}> 
         <Navbar setIsLinkActive={setIsLinkActive}/> 
-        <Hero />
+        <Hero isBlobLoading={isBlobLoading} setIsBlobLoading={setIsBlobLoading}/>
         <About />
         <Projects modal={modal} setModal={setModal}/>
         <TechStack />
