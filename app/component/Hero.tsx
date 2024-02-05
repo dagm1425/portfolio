@@ -109,20 +109,21 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
     }
 
     return (
-        <>
+        <section className="h-[55vh] lg:h-auto">
             <Blob setIsBlobLoading={setIsBlobLoading}/>
-            <motion.div className="absolute bottom-0 w-full flex justify-center -z-10">
-                <motion.h1 variants={titleVariants} initial="hidden" animate={!isBlobLoading ? "show" : "hidden"} custom={1} className="font-teko text-white text-[10rem] font-semibold uppercase">dagmawi nebeyu</motion.h1>
+            <div className="absolute bottom-[40%] sm:bottom-[45%] lg:bottom-2 w-full sm:-z-10 overflow-hidden">
+                <h1 className="font-teko text-left text-white text-6xl sm:text-9xl font-semibold uppercase pl-4 sm:pl-28 leading-none">dagmawi</h1>
+                <h1 className="font-teko text-left sm:text-right lg:text-center text-white text-6xl sm:text-9xl font-semibold uppercase pl-4 sm:pr-28 lg:p-0 leading-none">nebeyu</h1>
+            </div>
+            <motion.div className="absolute top-[64%] sm:top-36 lg:top-52 sm:right-8 lg:right-64 w-full sm:w-auto flex justify-center sm:flex-col sm:flex-start gap-2 sm:-z-10">
+                <GoArrowDownRight style={{ color: "white", fontSize: "2rem", marginBottom: window.innerWidth < 1024 ? "0" : "1rem" }}/>
+                <motion.p variants={subtitleVariants} initial="hidden" animate={!isBlobLoading ? "show" : "hidden"} custom={1} className="text-2xl sm:text-3xl text-white uppercase font-normal">front-end</motion.p>
+                <motion.p variants={subtitleVariants} initial="hidden" animate={!isBlobLoading ? "show" : "hidden"} custom={2} className="text-2xl sm:text-3xl text-white uppercase font-normal">developer</motion.p>
             </motion.div>
-            <motion.div className="absolute top-64 right-64 flex flex-col gap-2 flex-start -z-10">
-                <GoArrowDownRight style={{ color: "white", fontSize: "2rem", marginBottom: "1rem" }} />
-                <motion.p variants={subtitleVariants} initial="hidden" animate={!isBlobLoading ? "show" : "hidden"} custom={1} className="text-3xl text-white uppercase font-normal">front-end</motion.p>
-                <motion.p variants={subtitleVariants} initial="hidden" animate={!isBlobLoading ? "show" : "hidden"} custom={2} className="text-3xl text-white uppercase font-normal">developer</motion.p>
-            </motion.div>
-            <motion.div variants={subtitleVariants2} initial="hidden" animate={!isBlobLoading ? "show" : "hidden"} className="absolute bottom-64 left-24 flex items-center gap-8 text-white uppercase -z-10">
+            <motion.div variants={subtitleVariants2} initial="hidden" animate={!isBlobLoading ? "show" : "hidden"} className="absolute bottom-[41%] sm:bottom-[70%] lg:bottom-80 right-4 sm:right-auto sm:left-8 lg:left-32 flex justify-center items-center gap-2 sm:gap-3 lg:gap-8 text-white uppercase sm:-z-10">
                 <div>
-                    <p className="text-3xl mb-2">working</p>
-                    <p className="text-3xl">worldwide</p>
+                    <p className="text-sm sm:text-3xl sm:mb-2">working</p>
+                    <p className="text-sm sm:text-3xl">worldwide</p>
                 </div>
                 <PiGlobeLight style={{ fontSize: "2.5rem" }} />
             </motion.div>
@@ -142,7 +143,7 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
                 <motion.h1 variants={loaderTextVariants} initial="initial" animate="animate" className="font-teko leading-[.85]">d.n</motion.h1>
                 <motion.h1 variants={loaderTextVariants} initial="initial" animate="animate" className="font-teko leading-[.85]">d.n</motion.h1>
             </motion.div> 
-        </>
+        </section>
     )
 }
 

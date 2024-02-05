@@ -46,7 +46,7 @@ const Navbar: React.FC<NavbarProps> = ({ setIsLinkActive }) => {
 
 const FixedNavbar: React.FC<NavbarProps> = ({ setIsLinkActive }) => {
     return (
-        <nav className="fixed top-4 w-full flex justify-center items-center gap-16 text-white text-md uppercase px-8 py-2 z-10">
+        <nav className="fixed top-4 w-full flex justify-end sm:justify-center items-center gap-4 sm:gap-16 text-white text-md uppercase px-4 sm:px-8 py-2 z-10">
             {navLinks.map((link, i) => {
                 return (
                     <div key={i}

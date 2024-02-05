@@ -19,9 +19,9 @@ interface RowProps {
 
 const Row: React.FC<RowProps> = ({ svgData, x }) => {
   return (
-    <motion.div style={{x}} className='w-full flex gap-4 justify-center'>
+    <motion.div style={{x}} className='w-full flex gap-3 sm:gap-4 justify-center'>
       {svgData.map((item, index) => (
-        <div key={index} className='w-48 h-32 grid place-items-center backdrop-brightness-[1.25] rounded-2xl'>
+        <div key={index} className='w-48 h-24 sm:h-32 grid place-items-center backdrop-brightness-[1.25] rounded-2xl'>
           <item.svg color="#fff" width={50} height={50}/>
         </div>
       ))}
@@ -36,9 +36,10 @@ const TechStack = () => {
     target: container,
     offset: ["start end", "end start"], // adjust "start end" after making final spacing
   });
-  const { height } = dimension; // also try with width
-  const x = useTransform(scrollYProgress, [0, 1], [0, height * .3]);
-  const x2 = useTransform(scrollYProgress, [0, 1], [0, height * -.3]);
+  const { width, height } = dimension; // also try with width
+  const translationRate = (width < 768) || (width < 1024) ? .1 : .3;
+  const x = useTransform(scrollYProgress, [0, 1], [0, height * translationRate]);
+  const x2 = useTransform(scrollYProgress, [0, 1], [0, height * -translationRate]);
   const svgData = [
     { title: 'HTML', svg: Html },
     { title: 'CSS', svg: Css },
@@ -47,9 +48,6 @@ const TechStack = () => {
     { title: 'React', svg: ReactJs },
     { title: 'Next.js', svg: NextJs },
     { title: 'Firebase', svg: Firebase },
-  ];
-
-  const svgData2 = [
     { title: 'Jest', svg: Jest },
     { title: 'SASS', svg: Sass },
     { title: 'Tailwind CSS', svg: TailwindCss },
@@ -57,6 +55,14 @@ const TechStack = () => {
     { title: 'Material UI', svg: MaterialUi },
     { title: 'GSAP', svg: Gsap },
     { title: 'Framer Motion', svg: FramerMotion },
+  ];
+  const fragmentedSvgData = width < 768 ? [
+    { x: x, data: svgData.slice(0, 4) },
+    { x: x2, data: svgData.slice(4, 8) },
+    { x: x, data: svgData.slice(8, 12) }
+  ] :  [
+    { x: x, data: svgData.slice(0, 6) },
+    { x: x2, data: svgData.slice(6, 12) }
   ];
 
   useEffect( () => {
@@ -81,9 +87,12 @@ const TechStack = () => {
   }, [])
 
   return (
-    <div ref={container} className='py-36 px-4 flex flex-col gap-4 overflow-hidden'>
-      <Row svgData={svgData} x={x} />
-      <Row svgData={svgData2} x={x2} />
+    <div ref={container} className='py-28 sm:py-36 px-4 flex flex-col gap-4 overflow-hidden'>
+      {
+        fragmentedSvgData.map((svgData, i) => {
+          return <Row key={i} svgData={svgData.data} x={svgData.x} />
+        })
+      }
     </div>
   );
 };

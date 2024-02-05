@@ -35,8 +35,8 @@ const Projects: React.FC<ProjectsProps> = ({ modal, setModal }) => {
   ];
 
     return (
-      <section className="h-[85vh] flex items-center justify-center">
-        <div className="flex flex-col w-[1000px] items-center justify-center">
+      <section className="flex items-center justify-center">
+        <div className="flex flex-col w-5/6 lg:w-4/6 items-center justify-center">
           {
             projects.map((project, i) => {
               const isLast = i === projects.length - 1;
