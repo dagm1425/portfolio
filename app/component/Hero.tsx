@@ -21,20 +21,41 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
     }, [isBlobLoading, zIndex]);
 
     const titleVariants = {
-        hidden: {
-            y: "30vh",
-            opacity: 0
+        initial: {
+            opacity: 0,
+            rotateX: 90,
+            translateY: "30vh",
+            translateX: -20,
         },
-        show: (i: number) => ({
-            y: 0,
+        animate: {
             opacity: 1,
+            rotateX: 0,
+            translateY: 0,
+            translateX: 0,
             transition: {
-                duration: 0.5,
+                opacity: { duration: 0.35 },
+                duration: 0.65,
                 ease: [.215,.61,.355,1],
-                delay: 1.2 + (i * 0.05), 
+                delay: 1.2, 
             }
-        }),
+        },
     };
+
+    // const titleVariants = {
+    //     hidden: {
+    //         y: "30vh",
+    //         opacity: 0
+    //     },
+    //     show: (i: number) => ({
+    //         y: 0,
+    //         opacity: 1,
+    //         transition: {
+    //             duration: 0.5,
+    //             ease: [.215,.61,.355,1],
+    //             delay: 1.2 + (i * 0.05), 
+    //         }
+    //     }),
+    // };
 
     const subtitleVariants = {
         hidden: {
@@ -111,9 +132,13 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
     return (
         <section className="h-[55vh] lg:h-auto">
             <Blob setIsBlobLoading={setIsBlobLoading}/>
-            <div className="absolute bottom-[40%] sm:bottom-[45%] lg:bottom-2 w-full sm:-z-10 overflow-hidden">
-                <h1 className="font-teko text-left text-white text-6xl sm:text-9xl font-semibold uppercase pl-4 sm:pl-28 leading-none">dagmawi</h1>
-                <h1 className="font-teko text-left sm:text-right lg:text-center text-white text-6xl sm:text-9xl font-semibold uppercase pl-4 sm:pr-28 lg:p-0 leading-none">nebeyu</h1>
+            <div className="absolute bottom-[40%] sm:bottom-[45%] lg:bottom-2 w-full sm:-z-10 perspective-[120px] perspective-origin-bottom overflow-hidden">
+                <motion.div variants={titleVariants} initial="initial" animate={!isBlobLoading ? "animate" : "initial"}>
+                    <h1 className="font-teko text-left text-white text-6xl sm:text-9xl font-semibold uppercase pl-4 sm:pl-28 leading-none">dagmawi</h1>
+                </motion.div>
+                <motion.div variants={titleVariants} initial="initial" animate={!isBlobLoading ? "animate" : "initial"}>
+                    <h1 className="font-teko text-left sm:text-right lg:text-center text-white text-6xl sm:text-9xl font-semibold uppercase pl-4 sm:pr-28 lg:p-0 leading-none">nebeyu</h1>
+                </motion.div>
             </div>
             <motion.div className="absolute top-[64%] sm:top-36 lg:top-52 sm:right-8 lg:right-64 w-full sm:w-auto flex justify-center sm:flex-col sm:flex-start gap-2 sm:-z-10">
                 <GoArrowDownRight style={{ color: "white", fontSize: "2rem", marginBottom: window.innerWidth < 1024 ? "0" : "1rem" }}/>
