@@ -21,7 +21,7 @@ const About = () => {
   });
 
   return (
-    <section className='px-6 sm:px-24 lg:px-64 py-28 sm:py-32 lg:py-36'>
+    <section id="about" className='px-6 sm:px-24 lg:px-64 py-28 sm:py-32 lg:py-36'>
       <p ref={element} className="flex flex-wrap text-4xl sm:text-5xl lg:text-6xl text-white">
         {animatedWords}
       </p>

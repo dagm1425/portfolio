@@ -22,9 +22,9 @@ const Contact: React.FC<ContactProps> = ({ setIsLinkActive }) => {
     const title = useRef<HTMLDivElement>(null);
     const isInView = useInView(title, { once: true });
     const socials = [
-        { title: 'LinkedIn', href: 'https://www.linkedin.com/' },
-        { title: 'X/Twitter', href: 'https://www.twitter.com/' },
-        { title: 'Instagram', href: 'https://www.instagram.com/' },
+        { title: 'LinkedIn', href: 'https://www.linkedin.com/in/dagmawi-nebeyu-9898901a0/' },
+        { title: 'X/Twitter', href: 'https://twitter.com/NebeyuDagmawi/' },
+        { title: 'Instagram', href: 'https://www.instagram.com/dagmawinebeyu3/' },
     ];
     const titleVariants = {
         initial: {
@@ -84,7 +84,7 @@ const Contact: React.FC<ContactProps> = ({ setIsLinkActive }) => {
     };
 
     return (
-        <section className="relative">
+        <section id="contact" className="relative">
             {/* <div className="font-teko text-[9rem] leading-none text-white uppercase font-semibold text-left">let&apos;s work</div> */}
             {/* <div className="font-teko text-[9rem] leading-none text-white uppercase font-semibold text-center mb-20">together</div> */}
             <div ref={title} className="px-4 sm:px-20 lg:px-32 perspective-[120px] perspective-origin-top overflow-hidden">

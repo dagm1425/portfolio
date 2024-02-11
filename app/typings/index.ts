@@ -1,6 +1,7 @@
 export interface ProjectTyping {
   title: string,
   src: string,
+  href: string,
 } 
 
 export interface ModalTyping {

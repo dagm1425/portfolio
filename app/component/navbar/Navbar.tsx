@@ -53,7 +53,7 @@ const FixedNavbar: React.FC<NavbarProps> = ({ setIsLinkActive }) => {
                       className="relative" 
                       onMouseEnter={() => setIsLinkActive(true)}
                       onMouseLeave={() => setIsLinkActive(false)}>
-                        <AnimatedLink title={link.title}/>
+                      <AnimatedLink title={link.title} href={link.href} />
                     </div>
                 )
             })}
@@ -103,7 +103,7 @@ const ScrollNavbar: React.FC<ScrollNavbarProps> = ({ setIsLinkActive, isScrollin
                       className="relative" 
                       onMouseEnter={() => setIsLinkActive(true)}
                       onMouseLeave={() => setIsLinkActive(false)}>
-                        <AnimatedLink title={link.title}/>
+                        <AnimatedLink title={link.title} href={link.href}/>
                     </div>
                 )
             })}

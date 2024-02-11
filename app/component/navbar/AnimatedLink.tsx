@@ -5,6 +5,7 @@ import { Variants, motion } from "framer-motion";
 
 interface AnimatedLinkProps {
     title: string;
+    href?: string;
 }
 
 interface AnimatedWordProps {
@@ -66,19 +67,22 @@ const letterAnimationTwo = {
     }
 }
 
-const AnimatedLink: React.FC<AnimatedLinkProps> = ({ title }) => {
+const AnimatedLink: React.FC<AnimatedLinkProps> = ({ title, href }) => {
     const [isHovered, setIsHovered] = useState<boolean>(false);
 
     return (
-        <motion.div
+        <motion.a
+          href={href}
+          rel="noopener noreferrer"
+          target= {href?.startsWith("#") ? "" : "_blank"}
           onMouseEnter={() => setIsHovered(true)} 
           onMouseLeave={() => setIsHovered(false)} 
-          className="relative overflow-hidden cursor-pointer">
+          className="relative inline-block overflow-hidden cursor-pointer scroll-smooth">
             <AnimatedWord title={title} animation={letterAnimation} isHovered={isHovered}/>
             <div className="absolute top-0">
               <AnimatedWord title={title} animation={letterAnimationTwo} isHovered={isHovered}/>
             </div>
-        </motion.div>
+        </motion.a>
     )
 }
 
@@ -88,7 +92,7 @@ const AnimatedWord: React.FC<AnimatedWordProps> = ({ title, animation, isHovered
       variants={titleAnimation}
       initial="initial"
       animate={isHovered ? "hover" : "initial"}
-      className="whitespace-nowrap relative"
+      className="whitespace-nowrap relative uppercase"
     >
       {title
         .split("")
@@ -96,7 +100,7 @@ const AnimatedWord: React.FC<AnimatedWordProps> = ({ title, animation, isHovered
           character === " " ? (
             <span key={i}>&nbsp;</span>
           ) : (
-            <motion.span key={i} variants={animation} className="relative inline-block text-sm whitespace-nowrap">
+            <motion.span key={i} variants={animation} className="relative inline-block text-[inherit] whitespace-nowrap">
                 {character}
             </motion.span>
           )
