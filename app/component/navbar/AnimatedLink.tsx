@@ -14,14 +14,14 @@ interface AnimatedWordProps {
     isHovered: boolean,
 }
 
-const titleAnimation = {
+const titleVariants = {
   initial: {
     transition: {
       delayChildren: 0.25,
       staggerChildren: 0.01,
     }
   },
-  hover: {
+  animate: {
     transition: {
       delayChildren: 0.25,
       staggerChildren: 0.01,
@@ -29,7 +29,7 @@ const titleAnimation = {
   }
 }
 
-const letterAnimation = {
+const letterVariants = {
     initial: {
       y: 0,
       transition: {
@@ -38,7 +38,7 @@ const letterAnimation = {
         type: "tween",
       }
     },
-    hover: {
+    animate: {
       y: -25,
       transition: {
         duration: 0.7,
@@ -48,7 +48,7 @@ const letterAnimation = {
     }
 }
 
-const letterAnimationTwo = {
+const letterVariants2 = {
     initial: {
       y: 25,
       transition: {
@@ -57,7 +57,7 @@ const letterAnimationTwo = {
         type: "tween",
       }
     },
-    hover: {
+    animate: {
       y: 0,
       transition: {
         duration: 0.7,
@@ -78,9 +78,9 @@ const AnimatedLink: React.FC<AnimatedLinkProps> = ({ title, href }) => {
           onMouseEnter={() => setIsHovered(true)} 
           onMouseLeave={() => setIsHovered(false)} 
           className="relative inline-block overflow-hidden cursor-pointer scroll-smooth">
-            <AnimatedWord title={title} animation={letterAnimation} isHovered={isHovered}/>
+            <AnimatedWord title={title} animation={letterVariants} isHovered={isHovered}/>
             <div className="absolute top-0">
-              <AnimatedWord title={title} animation={letterAnimationTwo} isHovered={isHovered}/>
+              <AnimatedWord title={title} animation={letterVariants2} isHovered={isHovered}/>
             </div>
         </motion.a>
     )
@@ -89,9 +89,9 @@ const AnimatedLink: React.FC<AnimatedLinkProps> = ({ title, href }) => {
 const AnimatedWord: React.FC<AnimatedWordProps> = ({ title, animation, isHovered }) => {
   return (
     <motion.span
-      variants={titleAnimation}
+      variants={titleVariants}
       initial="initial"
-      animate={isHovered ? "hover" : "initial"}
+      animate={isHovered ? "animate" : "initial"}
       className="whitespace-nowrap relative uppercase"
     >
       {title

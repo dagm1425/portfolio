@@ -67,7 +67,7 @@ interface ScrollNavbarProps {
 }
 
 const ScrollNavbar: React.FC<ScrollNavbarProps> = ({ setIsLinkActive, isScrolling }) => {
-    const NavAnimations = {
+    const navVariants = {
         initial: {
           y: -50,
           x: "-50%",
@@ -95,7 +95,7 @@ const ScrollNavbar: React.FC<ScrollNavbarProps> = ({ setIsLinkActive, isScrollin
           initial="initial"
           animate={isScrolling ? "animate" : "initial"}
           exit="exit"
-          variants={NavAnimations}
+          variants={navVariants}
           className="fixed left-1/2 top-4 flex justify-center gap-16 text-white text-md bg-[#ffffff14] backdrop-blur-lg uppercase px-8 py-2 border rounded-[32px] border-[#ffffff14] z-10">
             {navLinks.map((link, i) => {
                 return (

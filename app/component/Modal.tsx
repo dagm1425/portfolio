@@ -12,10 +12,28 @@ interface ModalProps {
     projects: ProjectTyping[],
 }
 
-const ScaleVariants = {
-    initial: { scale: 0, x: "-50%", y: "-50%" },
-    open: { scale: 1, x: "-50%", y: "-50%", transiton: { duration: 0, ease: [0.45, 0, 0.55, 1]} },
-    close: { scale: 0, x: "-50%", y: "-50%", transiton: { duration: 0, ease: [0.87, 0, 0.13, 1]} },
+const scaleVariants = {
+    initial: {
+        scale: 0,
+        x: "-50%",
+        y: "-50%"
+    },
+    animate: {
+        scale: 1, 
+        x: "-50%", 
+        y: "-50%", 
+        transiton: { 
+            duration: 0, 
+            ease: [0.45, 0, 0.55, 1]} 
+    },
+    exit: { 
+        scale: 0, 
+        x: "-50%", 
+    y: "-50%", 
+    transiton: { 
+        duration: 0, 
+        ease: [0.87, 0, 0.13, 1]} 
+    },
 }
 
 const Modal: React.FC<ModalProps> = ({ modal, projects }) => {
@@ -43,10 +61,12 @@ const Modal: React.FC<ModalProps> = ({ modal, projects }) => {
 
     return (
         <>
-            <motion.div ref={container} className="absolute w-[300px] h-[400px] flex items-center justify-center overflow-hidden pointer-events-none" variants={ScaleVariants} initial="initial" animate={isActive? "open" : "close"}>
+            <motion.div ref={container} variants={scaleVariants} initial="initial" animate={isActive ? "animate" : "exit"} className="absolute w-[300px] h-[400px] flex items-center justify-center overflow-hidden pointer-events-none">
                 <Image src={`/images/${projects[project].src}`} alt={projects[project].title} width={300} height={200} className="rotate-6"/>
             </motion.div>
-            <motion.div ref={cursor} className="absolute flex items-center justify-center w-14 h-14 bg-[#455CE9] text-white rounded-[50%] pointer-events-none" variants={ScaleVariants} initial="initial" animate={isActive? "open" : "close"}><GoArrowUpRight style={{ fontSize: 32}}/></motion.div>
+            <motion.div ref={cursor} variants={scaleVariants} initial="initial" animate={isActive ? "animate" : "exit"} className="absolute flex items-center justify-center w-14 h-14 bg-[#455CE9] text-white rounded-[50%] pointer-events-none">
+                <GoArrowUpRight style={{ fontSize: 32}}/>
+            </motion.div>
         </>
     )
 }

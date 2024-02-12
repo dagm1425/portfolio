@@ -58,11 +58,11 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
     // };
 
     const subtitleVariants = {
-        hidden: {
+        initial: {
             y: 45,
             opacity: 0
         },
-        show: (i: number) => ({
+        animate: (i: number) => ({
             y: 0,
             opacity: 1,
             transition: {
@@ -74,11 +74,11 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
     };
 
     const subtitleVariants2 = {
-        hidden: {
+        initial: {
             y: -45,
             opacity: 0
         },
-        show: (i: number) => ({
+        animate: (i: number) => ({
             y: 0,
             opacity: 1,
             transition: {
@@ -141,18 +141,18 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
                 </motion.div>
             </div>
             <motion.div className="absolute top-[64%] sm:top-36 lg:top-52 sm:right-8 lg:right-64 w-full sm:w-auto flex justify-center sm:flex-col sm:flex-start gap-2 sm:-z-10">
-                <motion.div variants={subtitleVariants} initial="hidden" animate={!isBlobLoading ? "show" : "hidden"} custom={1}>
+                <motion.div variants={subtitleVariants} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={1}>
                     <GoArrowDownRight style={{ color: "white", fontSize: "2rem", marginBottom: window.innerWidth < 1024 ? "0" : "1rem" }}/>
                 </motion.div>
-                <motion.p variants={subtitleVariants} initial="hidden" animate={!isBlobLoading ? "show" : "hidden"} custom={2} className="text-2xl sm:text-3xl text-white uppercase font-normal">front-end</motion.p>
-                <motion.p variants={subtitleVariants} initial="hidden" animate={!isBlobLoading ? "show" : "hidden"} custom={3} className="text-2xl sm:text-3xl text-white uppercase font-normal">developer</motion.p>
+                <motion.p variants={subtitleVariants} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={2} className="text-2xl sm:text-3xl text-white uppercase font-normal">front-end</motion.p>
+                <motion.p variants={subtitleVariants} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={3} className="text-2xl sm:text-3xl text-white uppercase font-normal">developer</motion.p>
             </motion.div>
             <motion.div className="absolute bottom-[41%] sm:bottom-[70%] lg:bottom-80 right-4 sm:right-auto sm:left-8 lg:left-32 flex justify-center items-center gap-2 sm:gap-3 lg:gap-8 text-white uppercase sm:-z-10">
                 <div>
-                    <motion.p variants={subtitleVariants2} initial="hidden" animate={!isBlobLoading ? "show" : "hidden"} custom={2} className="text-sm sm:text-3xl sm:mb-2">working</motion.p>
-                    <motion.p variants={subtitleVariants2} initial="hidden" animate={!isBlobLoading ? "show" : "hidden"} custom={3} className="text-sm sm:text-3xl">worldwide</motion.p>
+                    <motion.p variants={subtitleVariants2} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={2} className="text-sm sm:text-3xl sm:mb-2">working</motion.p>
+                    <motion.p variants={subtitleVariants2} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={3} className="text-sm sm:text-3xl">worldwide</motion.p>
                 </div>
-                <motion.div variants={subtitleVariants2} initial="hidden" animate={!isBlobLoading ? "show" : "hidden"} custom={1}>
+                <motion.div variants={subtitleVariants2} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={1}>
                     <PiGlobeLight style={{ fontSize: "2.5rem" }} />
                 </motion.div>
             </motion.div>
