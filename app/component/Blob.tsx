@@ -8,7 +8,7 @@ interface BlobProps {
 
 const Spline = lazy(() => delay(import('@splinetool/react-spline')));
 
-const delay = (promise: Promise<any>) => {
+const delay = async (promise: Promise<any>) => {
   return new Promise(resolve => {
     setTimeout(resolve, 2500);
   }).then(() => promise);
