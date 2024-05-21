@@ -97,8 +97,8 @@ const Contact: React.FC<ContactProps> = ({ setIsLinkActive }) => {
             </div>
             <div className="flex flex-col sm:flex-row sm:justify-between gap-8 lg:gap-0 px-6 sm:px-20 lg:px-32">
                 <div className="mb-4 sm:mb-0">
-                    <p className="text-white uppercase">cell: +251 953 40 78 88</p>
-                    <p className="text-white uppercase mb-3 sm:mb-6">email: dagmawinebeyu3@gmail.com</p>
+                    <p className="text-white uppercase">cell/WhatsApp: <a href="tel:+251 953 40 78 88">+251 953 40 78 88</a></p>
+                    <p className="text-white uppercase mb-3 sm:mb-6">email: <a href="mailto:contact@dagmawinebeyu.com">contact@dagmawinebeyu.com</a></p>
                     <div className="flex gap-8 text-white text-sm">
                         {socials.map((social, i) => {
                             return (
