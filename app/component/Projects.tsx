@@ -39,8 +39,7 @@ const Projects: React.FC<ProjectsProps> = ({ modal, setModal }) => {
         <div className="flex flex-col w-5/6 lg:w-4/6 items-center justify-center">
           {
             projects.map((project, i) => {
-              const isLast = i === projects.length - 1;
-              return <Project key={i} index={i} project={project} setModal={setModal} isLast={isLast}/>
+              return <Project key={i} index={i} project={project} setModal={setModal} />
             })
           }
         </div>
