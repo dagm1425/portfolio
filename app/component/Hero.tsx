@@ -142,18 +142,28 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
                 </motion.div>
             </div>
             <motion.div className="absolute top-[64%] sm:top-36 lg:top-52 sm:right-8 lg:right-64 w-full sm:w-auto flex justify-center sm:flex-col sm:flex-start gap-2 sm:-z-10">
-                <motion.div variants={subtitleVariants} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={1}>
-                    <GoArrowDownRight style={{ color: "white", fontSize: "2rem", marginBottom: window.innerWidth < 1024 ? "0" : "1rem" }}/>
+                <motion.div variants={subtitleVariants} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={1} className="w-fit bg-white bg-opacity-[0.12] mb-[1rem] p-2 rounded-[50%]">
+                    <GoArrowDownRight style={{ color: "white", fontSize: "2rem", clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}/>
                 </motion.div>
-                <motion.p variants={subtitleVariants} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={2} className="text-2xl sm:text-3xl text-white uppercase font-normal">front-end</motion.p>
-                <motion.p variants={subtitleVariants} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={3} className="text-2xl sm:text-3xl text-white uppercase font-normal">developer</motion.p>
-            </motion.div>
-            <motion.div className="absolute bottom-[41%] sm:bottom-[70%] lg:bottom-80 right-4 sm:right-auto sm:left-8 lg:left-32 flex justify-center items-center gap-2 sm:gap-3 lg:gap-8 text-white uppercase sm:-z-10">
-                <div>
-                    <motion.p variants={subtitleVariants2} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={2} className="text-sm sm:text-3xl sm:mb-2">working</motion.p>
-                    <motion.p variants={subtitleVariants2} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={3} className="text-sm sm:text-3xl">worldwide</motion.p>
+                <div style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}>
+                    <motion.p variants={subtitleVariants} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={2} className="text-2xl sm:text-3xl text-white uppercase font-normal">front-end</motion.p>
                 </div>
-                <motion.div variants={subtitleVariants2} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={1}>
+                <div style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}>
+                    <motion.p variants={subtitleVariants} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={3} className="text-2xl sm:text-3xl text-white uppercase font-normal">developer</motion.p>
+                </div>
+            </motion.div>
+            <motion.div className="absolute bottom-[41%] sm:bottom-[70%] lg:bottom-80 right-4 sm:right-auto sm:left-8 lg:left-32 flex justify-center items-center gap-2 sm:gap-3 lg:gap-8 text-white uppercase sm:-z-10" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}>
+                <div>
+                    <div style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}>
+                        <motion.p variants={subtitleVariants2} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={2} className="text-sm sm:text-3xl sm:mb-2">working</motion.p>
+                    </div>
+                    <div style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}>
+                    <motion.p variants={subtitleVariants2} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={3} className="text-sm sm:text-3xl">worldwide</motion.p>
+                    <motion.p variants={subtitleVariants2} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={3} className="text-sm sm:text-3xl">worldwide</motion.p>
+                        <motion.p variants={subtitleVariants2} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={3} className="text-sm sm:text-3xl">worldwide</motion.p>
+                    </div>
+                </div>
+                <motion.div variants={subtitleVariants2} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={1} className="w-fit bg-white bg-opacity-[0.12] mb-[1rem] p-2 rounded-[50%]">
                     <PiGlobeLight style={{ fontSize: "2.5rem" }} />
                 </motion.div>
             </motion.div>
