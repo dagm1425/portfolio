@@ -65,7 +65,7 @@ const Modal: React.FC<ModalProps> = ({ modal, projects }) => {
                 <Image src={`/images/${projects[project].src}`} alt={projects[project].title} width={300} height={200} className="rotate-6"/>
             </motion.div>
             <motion.div ref={cursor} variants={scaleVariants} initial="initial" animate={isActive ? "animate" : "exit"} className="absolute flex items-center justify-center w-14 h-14 bg-[#455CE9] text-white rounded-[50%] pointer-events-none">
-                <GoArrowUpRight style={{ fontSize: 32}}/>
+                <GoArrowUpRight className="text-[2rem]"/>
             </motion.div>
         </>
     )

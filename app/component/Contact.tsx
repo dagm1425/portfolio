@@ -123,7 +123,7 @@ const Contact: React.FC<ContactProps> = ({ setIsLinkActive }) => {
                         onMouseLeave={() => setIsLinkActive(false)}
                         onClick={() => form.current?.requestSubmit()}>
                         <AnimatedLink title="send" />
-                        <RiSendPlaneLine style={{ display: "inline", color: "white", fontSize: "1.25rem", marginTop: "0"}}/>
+                        <RiSendPlaneLine className="inline text-white text-[1.25rem] mt-0"/>
                     </button>
                 </form>
             </div>

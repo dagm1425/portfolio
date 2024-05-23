@@ -143,7 +143,7 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
             </div>
             <motion.div className="absolute top-[64%] sm:top-36 lg:top-52 sm:right-8 lg:right-64 w-full sm:w-auto flex justify-center sm:flex-col sm:flex-start gap-2 sm:-z-10">
                 <motion.div variants={subtitleVariants} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={1} className="w-fit bg-white bg-opacity-[0.12] mb-[1rem] p-2 rounded-[50%]">
-                    <GoArrowDownRight style={{ color: "white", fontSize: "2rem", clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}/>
+                    <GoArrowDownRight className="text-white text-[2rem]" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}/>
                 </motion.div>
                 <div style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}>
                     <motion.p variants={subtitleVariants} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={2} className="text-2xl sm:text-3xl text-white uppercase font-normal">front-end</motion.p>
@@ -164,7 +164,7 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
                     </div>
                 </div>
                 <motion.div variants={subtitleVariants2} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={1} className="w-fit bg-white bg-opacity-[0.12] mb-[1rem] p-2 rounded-[50%]">
-                    <PiGlobeLight style={{ fontSize: "2.5rem" }} />
+                    <PiGlobeLight className="text-[2.5rem]" />
                 </motion.div>
             </motion.div>
             <motion.div className={`absolute top-0 left-0 w-full h-screen flex`} style={{zIndex}}>
