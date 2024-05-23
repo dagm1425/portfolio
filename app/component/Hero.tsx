@@ -158,8 +158,6 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
                         <motion.p variants={subtitleVariants2} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={2} className="text-sm sm:text-3xl sm:mb-2">working</motion.p>
                     </div>
                     <div style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}>
-                    <motion.p variants={subtitleVariants2} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={3} className="text-sm sm:text-3xl">worldwide</motion.p>
-                    <motion.p variants={subtitleVariants2} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={3} className="text-sm sm:text-3xl">worldwide</motion.p>
                         <motion.p variants={subtitleVariants2} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={3} className="text-sm sm:text-3xl">worldwide</motion.p>
                     </div>
                 </div>
