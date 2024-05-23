@@ -171,7 +171,7 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
                 {
                     blindersArr.map(i => {
                         return (
-                            <motion.div key={i} variants={blinderVariants} custom={i + 1} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} className="h-screen w-[10vw] bg-slate-400 origin-top"></motion.div>
+                            <motion.div key={i} variants={blinderVariants} custom={i + 1} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} className="h-screen w-[10vw] bg-[#797986] origin-top"></motion.div>
                         )
                     })
                 }
