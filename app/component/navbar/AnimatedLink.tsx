@@ -70,14 +70,33 @@ const letterVariants2 = {
 const AnimatedLink: React.FC<AnimatedLinkProps> = ({ title, href }) => {
     const [isHovered, setIsHovered] = useState<boolean>(false);
 
+    const handleScroll = (e: React.MouseEvent, targetId: string | undefined) => {
+      if(!targetId) return;
+
+      e.preventDefault();
+      
+      const targetElement = document.getElementById(targetId);
+
+      if (targetElement) {
+          targetElement.scrollIntoView({
+              behavior: 'smooth'
+          });
+      }
+    }
+
     return (
         <motion.a
           href={href}
-          rel="noopener noreferrer"
-          target= {href?.startsWith("#") ? "" : "_blank"}
+          rel="noopener noreferrer" 
+          target= {href?.startsWith("#") ? "" : "_blank"} 
           onMouseEnter={() => setIsHovered(true)} 
           onMouseLeave={() => setIsHovered(false)} 
-          className="relative inline-block overflow-hidden cursor-pointer scroll-smooth">
+          onClick={(e) => {
+            if (href && href.startsWith('#')) {
+              handleScroll(e, href.substring(1));
+            }
+          }}
+          className="relative inline-block overflow-hidden cursor-pointer">
             <AnimatedWord title={title} animation={letterVariants} isHovered={isHovered}/>
             <div className="absolute top-0">
               <AnimatedWord title={title} animation={letterVariants2} isHovered={isHovered}/>
