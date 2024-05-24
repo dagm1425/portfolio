@@ -131,7 +131,7 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
     }
 
     return (
-        <section className="h-[55vh] lg:h-auto">
+        <section id="home" className="h-[55vh] lg:h-auto">
             <Blob setIsBlobLoading={setIsBlobLoading}/>
             <div className="absolute bottom-[40%] sm:bottom-[45%] lg:bottom-2 w-full sm:-z-10 perspective-[120px] perspective-origin-bottom overflow-hidden">
                 <motion.div variants={titleVariants} initial="initial" animate={!isBlobLoading ? "animate" : "initial"}>

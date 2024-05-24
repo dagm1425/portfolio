@@ -8,6 +8,7 @@ interface NavbarProps {
 }
 
 const navLinks = [
+  { title: "Home", href: "#home"},
   { title: "About", href: "#about" },
   { title: "Projects", href: "#projects" },
   { title: "Contact", href: "#contact" },
@@ -49,16 +50,18 @@ const FixedNavbar: React.FC<NavbarProps> = ({ setIsLinkActive }) => {
         <nav className="flex items-center text-white px-12 py-3">
             <h1 className="font-teko text-[3rem] mr-auto"><a href="#home">D | N</a></h1>
             <div className="flex gap-4 sm:gap-12 text-md uppercase">
-              {navLinks.map((link, i) => {
-                  return (
-                      <div key={i}
-                        className="relative" 
-                        onMouseEnter={() => setIsLinkActive(true)}
-                        onMouseLeave={() => setIsLinkActive(false)}>
-                        <AnimatedLink title={link.title} href={link.href} />
-                      </div>
-                  )
-              })}
+            {navLinks
+              .filter((_, i) => i !== 0)
+              .map((link, i) => (
+                <div
+                  key={i}
+                  className="relative"
+                  onMouseEnter={() => setIsLinkActive(true)}
+                  onMouseLeave={() => setIsLinkActive(false)}
+                >
+                  <AnimatedLink title={link.title} href={link.href} />
+                </div>
+              ))}
             </div>
         </nav>
     )
@@ -99,7 +102,7 @@ const ScrollNavbar: React.FC<ScrollNavbarProps> = ({ setIsLinkActive, isScrollin
           animate={isScrolling ? "animate" : "initial"}
           exit="exit"
           variants={navVariants}
-          className="fixed left-1/2 top-4 flex justify-center gap-16 text-white text-md bg-[#ffffff14] backdrop-blur-lg uppercase px-8 py-2 border rounded-[32px] border-[#ffffff14] z-10">
+          className="fixed left-1/2 top-4 flex justify-center gap-10 text-white text-md bg-[#ffffff14] backdrop-blur-lg uppercase px-8 py-2 border rounded-[32px] border-[#ffffff14] z-10">
             {navLinks.map((link, i) => {
                 return (
                     <div key={i}
