@@ -87,7 +87,7 @@ const TechStack = () => {
   }, [])
 
   return (
-    <div ref={container} className='py-28 sm:py-40 px-4 flex flex-col gap-4 overflow-hidden'>
+    <div ref={container} className='py-28 sm:py-40 lg:py-52 px-4 flex flex-col gap-4 overflow-hidden'>
       {
         fragmentedSvgData.map((svgData, i) => {
           return <Row key={i} svgData={svgData.data} x={svgData.x} />

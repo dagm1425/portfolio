@@ -84,7 +84,7 @@ const Contact: React.FC<ContactProps> = ({ setIsLinkActive }) => {
     };
 
     return (
-        <section id="contact" className="relative">
+        <section id="contact" className="relative lg:py-4">
             {/* <div className="font-teko text-[9rem] leading-none text-white uppercase font-semibold text-left">let&apos;s work</div> */}
             {/* <div className="font-teko text-[9rem] leading-none text-white uppercase font-semibold text-center mb-20">together</div> */}
             <div ref={title} className="px-4 sm:px-20 lg:px-32 perspective-[120px] perspective-origin-top overflow-hidden">
