@@ -46,17 +46,20 @@ const Navbar: React.FC<NavbarProps> = ({ setIsLinkActive }) => {
 
 const FixedNavbar: React.FC<NavbarProps> = ({ setIsLinkActive }) => {
     return (
-        <nav className="fixed top-4 w-full flex justify-end sm:justify-center items-center gap-4 sm:gap-16 text-white text-md uppercase px-4 sm:px-8 py-2 z-10">
-            {navLinks.map((link, i) => {
-                return (
-                    <div key={i}
-                      className="relative" 
-                      onMouseEnter={() => setIsLinkActive(true)}
-                      onMouseLeave={() => setIsLinkActive(false)}>
-                      <AnimatedLink title={link.title} href={link.href} />
-                    </div>
-                )
-            })}
+        <nav className="flex items-center text-white px-12 py-3">
+            <h1 className="font-teko text-[3rem] mr-auto"><a href="#home">D | N</a></h1>
+            <div className="flex gap-4 sm:gap-12 text-md uppercase">
+              {navLinks.map((link, i) => {
+                  return (
+                      <div key={i}
+                        className="relative" 
+                        onMouseEnter={() => setIsLinkActive(true)}
+                        onMouseLeave={() => setIsLinkActive(false)}>
+                        <AnimatedLink title={link.title} href={link.href} />
+                      </div>
+                  )
+              })}
+            </div>
         </nav>
     )
 }
