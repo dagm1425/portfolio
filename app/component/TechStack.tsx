@@ -37,7 +37,7 @@ const TechStack = () => {
     offset: ["start end", "end start"], // adjust "start end" after making final spacing
   });
   const { width, height } = dimension; // also try with width
-  const translationRate = (width < 768) || (width < 1024) ? .1 : .3;
+  const translationRate = (width < 768) || (width < 1024) ? .1 : .2;
   const x = useTransform(scrollYProgress, [0, 1], [0, height * translationRate]);
   const x2 = useTransform(scrollYProgress, [0, 1], [0, height * -translationRate]);
   const svgData = [
