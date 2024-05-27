@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import { SvgProps } from "../typings/index";
-import { Html, Css, Js, Ts, ReactJs, NextJs, Firebase, Jest, Sass, TailwindCss, StyledComponents, MaterialUi, Gsap, FramerMotion } from '../assets/svg/index';
+import { Html, Css, Js, Ts, ReactJs, NextJs, RestApi, Redux, Firebase, Jest, Sass, TailwindCss, StyledComponents, MaterialUi, Gsap, FramerMotion } from '../assets/svg/index';
 import { MotionValue, motion } from 'framer-motion';
 import { useScroll, useTransform } from 'framer-motion';
 import Lenis from '@studio-freight/lenis';
@@ -47,6 +47,8 @@ const TechStack = () => {
     { title: 'Typescript', svg: Ts },
     { title: 'React', svg: ReactJs },
     { title: 'Next.js', svg: NextJs },
+    { title: 'Redux', svg: Redux },
+    { title: 'RestApi', svg: RestApi },
     { title: 'Firebase', svg: Firebase },
     { title: 'Jest', svg: Jest },
     { title: 'SASS', svg: Sass },
@@ -61,8 +63,8 @@ const TechStack = () => {
     { x: x2, data: svgData.slice(4, 8) },
     { x: x, data: svgData.slice(8, 12) }
   ] :  [
-    { x: x, data: svgData.slice(0, 6) },
-    { x: x2, data: svgData.slice(6, 12) }
+    { x: x, data: svgData.slice(0, 8) },
+    { x: x2, data: svgData.slice(8, 17) }
   ];
 
   useEffect( () => {
