@@ -32,6 +32,11 @@ const Navbar: React.FC<NavbarProps> = ({ setIsLinkActive }) => {
       };
     }, []);
   
+    useEffect(() => {
+      setIsLinkActive(false);
+
+    }, [isScrolling, setIsLinkActive]);
+
     return (
       <>
         <AnimatePresence>
