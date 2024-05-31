@@ -35,8 +35,8 @@ const Projects: React.FC<ProjectsProps> = ({ modal, setModal }) => {
   ];
 
     return (
-      <section id="projects" className="flex items-center justify-center lg:pt-[6.5rem]">
-        <div className="flex flex-col w-5/6 lg:w-4/6 items-center justify-center">
+      <section id="projects" className="flex items-center justify-center pb-28 md:pb-0 xl:pt-[6.5rem]">
+        <div className="flex flex-col md:max-xl:flex-row w-5/6 xl:w-4/6 items-center justify-center md:max-xl:justify-start overflow-x-auto">
           {
             projects.map((project, i) => {
               return <Project key={i} index={i} project={project} setModal={setModal} />

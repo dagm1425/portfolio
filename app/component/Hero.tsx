@@ -131,7 +131,7 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
     }
 
     return (
-        <section id="home" className="h-[55vh] lg:h-auto">
+        <section id="home" className="h-[55vh] md:h-[67vh] lg:h-[48vh] xl:h-auto">
             <Blob setIsBlobLoading={setIsBlobLoading}/>
             {/* <div className="absolute bottom-[40%] sm:bottom-[45%] lg:bottom-2 w-full sm:-z-10 perspective-[120px] perspective-origin-bottom overflow-hidden">
                 <motion.div variants={titleVariants} initial="initial" animate={!isBlobLoading ? "animate" : "initial"}>
@@ -141,29 +141,29 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
                     <h1 className="font-teko text-left sm:text-right lg:text-center text-white text-6xl sm:text-9xl font-semibold uppercase pl-4 sm:pr-28 lg:p-0 leading-none">nebeyu</h1>
                 </motion.div>
             </div> */}
-            <motion.div className="absolute bottom-[40%] sm:bottom-[45%] lg:bottom-8 w-full sm:-z-10">
-                <h1 className="font-teko text-left sm:text-right lg:text-center text-white text-6xl sm:text-[10rem] font-semibold uppercase pl-4 sm:pr-28 lg:p-0 leading-none">dagmawi nebeyu</h1>
+            <motion.div className="absolute bottom-[35%] md:bottom-[33%] lg:bottom-[35%] xl:bottom-8 w-full md:-z-10">
+                <h1 className="font-teko text-left md:text-center text-white text-6xl md:text-[7rem] lg:text-[9rem] xl:text-[10rem] font-semibold uppercase pl-4 md:p-0 leading-none">dagmawi nebeyu</h1>
             </motion.div>
-            <motion.div className="absolute top-[64%] sm:top-36 lg:top-52 sm:right-8 lg:right-60 w-full sm:w-auto flex justify-center sm:flex-col sm:flex-start gap-2 sm:-z-10">
+            <motion.div className="absolute top-[65%] md:top-[40%] lg:top-[35%] xl:top-52 md:right-12 lg:right-20 xl:right-60 w-full md:w-auto flex justify-center md:flex-col md:flex-start gap-2 md:-z-10">
                 <div style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}>
-                    <motion.div variants={subtitleVariants} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={1} className="mb-12">
-                        <GoArrowDownRight className="text-white text-[2.25rem]" style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}/>
+                    <motion.div variants={subtitleVariants} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={1} className="md:mb-6 lg:mb-12">
+                        <GoArrowDownRight className="text-white text-[2.25rem]"/>
                     </motion.div>
                 </div>
                 <div style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}>
-                    <motion.p variants={subtitleVariants} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={2} className="text-2xl sm:text-3xl text-white uppercase font-normal mb-1">front-end</motion.p>
+                    <motion.p variants={subtitleVariants} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={2} className="text-2xl md:text-3xl text-white uppercase font-normal mb-1">front-end</motion.p>
                 </div>
                 <div style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}>
-                    <motion.p variants={subtitleVariants} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={3} className="text-2xl sm:text-3xl text-white uppercase font-normal">developer</motion.p>
+                    <motion.p variants={subtitleVariants} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={3} className="text-2xl md:text-3xl text-white uppercase font-normal">developer</motion.p>
                 </div>
             </motion.div>
-            <motion.div variants={subtitleVariants2} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} className="absolute bottom-[41%] sm:bottom-[70%] lg:bottom-80 right-4 sm:right-auto sm:left-8 lg:left-0 flex items-center gap-5 text-white uppercase p-3 pl-16 bg-white bg-opacity-[0.1] rounded-r-full sm:-z-10">
-                <div className="pr-14 py-1">
-                    <motion.p className="text-sm sm:text-xl sm:mb-1">working</motion.p>
-                    <motion.p className="text-sm sm:text-xl">worldwide</motion.p>
+            <motion.div variants={subtitleVariants2} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} className="absolute bottom-[46%] md:bottom-[46%] lg:bottom-[49%] xl:bottom-80 left-0 flex items-center gap-3 md:gap-4 lg:gap-5 text-white uppercase p-3 pl-6 lg:pl-12 xl:pl-16 bg-white bg-opacity-[0.1] rounded-r-full sm:-z-10">
+                <div className="pr-11 lg:pr-14 sm:py-1">
+                    <motion.p className="text-sm md:text-xl md:mb-1">working</motion.p>
+                    <motion.p className="text-sm md:text-xl">worldwide</motion.p>
                 </div>
-                <motion.div className="w-fit bg-[#1e1e21] p-4 rounded-[50%] -translate-x-1/2 -mr-8">
-                    <PiGlobeLight className="text-[2.75rem]" />
+                <motion.div className="w-fit bg-[#1e1e21] p-2 sm:p-4 rounded-[50%] -translate-x-1/2 -mr-6 md:-mr-8">
+                    <PiGlobeLight className="text-4xl sm:text-[2.75rem]" />
                 </motion.div>
             </motion.div>
             <motion.div className={`absolute top-0 left-0 w-full h-screen flex`} style={{zIndex}}>

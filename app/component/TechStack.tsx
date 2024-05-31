@@ -21,7 +21,7 @@ const Row: React.FC<RowProps> = ({ svgData, x }) => {
   return (
     <motion.div style={{x}} className='w-full flex gap-3 sm:gap-4 justify-center'>
       {svgData.map((item, index) => (
-        <div key={index} className='w-48 h-24 sm:h-32 grid place-items-center backdrop-brightness-[1.25] rounded-2xl'>
+        <div key={index} className='w-[11rem] h-[5.5rem] flex-none sm:h-32 grid place-items-center backdrop-brightness-[1.25] rounded-2xl'>
           <item.svg color="#fff" width={50} height={50}/>
         </div>
       ))}
@@ -31,13 +31,12 @@ const Row: React.FC<RowProps> = ({ svgData, x }) => {
 
 const TechStack = () => {  
   const container = useRef<HTMLDivElement>(null);
-  const [dimension, setDimension] = useState<{width: number, height: number}>({width:0, height:0});
+  const [height, setHeight] = useState<number>(0);
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ["start end", "end start"], // adjust "start end" after making final spacing
+    offset: ["start end", "end start"], 
   });
-  const { width, height } = dimension; // also try with width
-  const translationRate = (width < 768) || (width < 1024) ? .1 : .2;
+  const translationRate = .2;
   const x = useTransform(scrollYProgress, [0, 1], [0, height * translationRate]);
   const x2 = useTransform(scrollYProgress, [0, 1], [0, height * -translationRate]);
   const svgData = [
@@ -58,11 +57,7 @@ const TechStack = () => {
     { title: 'GSAP', svg: Gsap },
     { title: 'Framer Motion', svg: FramerMotion },
   ];
-  const fragmentedSvgData = width < 768 ? [
-    { x: x, data: svgData.slice(0, 4) },
-    { x: x2, data: svgData.slice(4, 8) },
-    { x: x, data: svgData.slice(8, 12) }
-  ] :  [
+  const fragmentedSvgData = [
     { x: x, data: svgData.slice(0, 8) },
     { x: x2, data: svgData.slice(8, 17) }
   ];
@@ -76,7 +71,7 @@ const TechStack = () => {
     }
 
     const resize = () => {
-      setDimension({width: window.innerWidth, height: window.innerHeight})
+      setHeight(window.innerHeight)
     }
 
     window.addEventListener("resize", resize)
@@ -89,7 +84,7 @@ const TechStack = () => {
   }, [])
 
   return (
-    <div ref={container} className='py-28 sm:py-40 lg:py-52 px-4 flex flex-col gap-4 overflow-hidden'>
+    <div ref={container} className='hidden md:flex py-28 md:py-48 lg:py-52 px-4 flex-col gap-4 overflow-hidden'>
       {
         fragmentedSvgData.map((svgData, i) => {
           return <Row key={i} svgData={svgData.data} x={svgData.x} />

@@ -15,11 +15,11 @@ const delay = async (promise: Promise<any>) => {
 }
 
 const Blob: React.FC<BlobProps>  = ({ setIsBlobLoading }) => {
-  const [isMobile, setIsMobile] = useState(false);
-  const scene = isMobile ? "https://prod.spline.design/4fw6UsesTpkABa3N/scene.splinecode" : "https://prod.spline.design/0Fktb5VBB3QzS3Aw/scene.splinecode";
+  const [width, setWidth] = useState<number>(0);
+  const scene = width < 768 ? "https://prod.spline.design/4fw6UsesTpkABa3N/scene.splinecode" : width < 1024 ? "https://prod.spline.design/8TpjCUqUDCKdBWU4/scene.splinecode" : width < 1440 ? "https://prod.spline.design/hITryAhlvsA20UJ0/scene.splinecode" : "https://prod.spline.design/0Fktb5VBB3QzS3Aw/scene.splinecode";
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    const handleResize = () => setWidth(window.innerWidth);
     handleResize(); 
 
     window.addEventListener('resize', handleResize);
@@ -27,7 +27,7 @@ const Blob: React.FC<BlobProps>  = ({ setIsBlobLoading }) => {
   }, []);
 
   return (
-      <div className="mt-24 lg:mt-0 h-[60%] lg:h-auto">
+      <div className="mt-24 md:mt-0 h-[60%] md:h-auto">
         <Suspense fallback={null}>
           <Spline scene={scene} onLoad={() => setIsBlobLoading(false)}/>
         </Suspense>
