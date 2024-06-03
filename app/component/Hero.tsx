@@ -186,8 +186,8 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
                 }
             </motion.div>
             <motion.div variants={loaderContainerVariants} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} className="absolute top-1/2 left-1/2 h-[84px] text-8xl uppercase overflow-hidden z-30">
-                <motion.h1 variants={loaderTextVariants} initial="initial" animate="animate" className="font-teko leading-[.85]">d.n</motion.h1>
-                <motion.h1 variants={loaderTextVariants} initial="initial" animate="animate" className="font-teko leading-[.85]">d.n</motion.h1>
+                <motion.h1 variants={loaderTextVariants} initial="initial" animate="animate" className="font-teko leading-[.85]">D | N</motion.h1>
+                <motion.h1 variants={loaderTextVariants} initial="initial" animate="animate" className="font-teko leading-[.85]">D | N</motion.h1>
             </motion.div> 
         </section>
     )
