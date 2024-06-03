@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Dispatch, SetStateAction, useEffect } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import Blob from "./Blob";
 import { animate, motion, useMotionValue } from "framer-motion";
 import { GoArrowDownRight } from "react-icons/go";
@@ -13,13 +13,23 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
     const zIndex = useMotionValue(30);
-    const blindersArr = Array.from(Array(10).keys());
+    const [width, setWidth] = useState<number>(0);
+    const noOfBlinders = width < 1440 ? 5 : 10;
+    const blindersArr = Array.from(Array(noOfBlinders).keys());
 
     useEffect(() => {
         if(!isBlobLoading) {
             animate(zIndex, -10, { delay: 1.2 });
         }
     }, [isBlobLoading, zIndex]);
+
+    useEffect(() => {
+        const handleResize = () => setWidth(window.innerWidth);
+        handleResize(); 
+    
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const titleVariants = {
         initial: {
@@ -170,7 +180,7 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
                 {
                     blindersArr.map(i => {
                         return (
-                            <motion.div key={i} variants={blinderVariants} custom={i + 1} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} className="h-screen w-[10vw] bg-[#797986] origin-top"></motion.div>
+                            <motion.div key={i} variants={blinderVariants} custom={i + 1} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} className={`h-screen bg-[#797986] origin-top ${noOfBlinders === 5 ? 'w-[20vw]' : 'w-[10vw]'}`}></motion.div>
                         )
                     })
                 }
