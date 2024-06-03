@@ -27,7 +27,7 @@ const Blob: React.FC<BlobProps>  = ({ setIsBlobLoading }) => {
   }, []);
 
   return (
-      <div className="mt-24 md:mt-0 h-[60%] md:h-auto">
+      <div className="mt-6 md:-mt-28 lg:-mt-32 xl:-mt-20 h-[60%] md:h-auto">
         <Suspense fallback={null}>
           <Spline scene={scene} onLoad={() => setIsBlobLoading(false)}/>
         </Suspense>
