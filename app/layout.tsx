@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import { Inter, Teko } from 'next/font/google'
 import './globals.css'
 
@@ -9,6 +10,10 @@ const teko = Teko({
   display: 'swap',
   variable: '--font-teko',
 });
+
+export const metadata: Metadata = {
+  title: 'Dagmawi Nebeyu | Front-end Developer',
+}
 
 export default function RootLayout({
   children,
