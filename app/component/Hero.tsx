@@ -143,17 +143,17 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
     return (
         <section id="home" className="h-[55vh] md:h-[67vh] lg:h-[48vh] xl:h-auto">
             <Blob setIsBlobLoading={setIsBlobLoading}/>
-            {/* <div className="absolute bottom-[40%] sm:bottom-[45%] lg:bottom-2 w-full sm:-z-10 perspective-[120px] perspective-origin-bottom overflow-hidden">
+            <div className="absolute bottom-[35%] md:bottom-[33%] lg:bottom-[35%] xl:bottom-8 w-full md:-z-10 perspective-[120px] perspective-origin-bottom overflow-hidden">
                 <motion.div variants={titleVariants} initial="initial" animate={!isBlobLoading ? "animate" : "initial"}>
-                    <h1 className="font-teko text-left text-white text-6xl sm:text-9xl font-semibold uppercase pl-4 sm:pl-28 leading-none">dagmawi</h1>
+                    <h1 className="font-teko text-left sm:text-right lg:text-center text-white text-6xl sm:text-9xl xl:text-[11rem] font-semibold uppercase pl-4 sm:pl-28 lg:p-0 leading-none">dagmawi nebeyu</h1>
                 </motion.div>
-                <motion.div variants={titleVariants} initial="initial" animate={!isBlobLoading ? "animate" : "initial"}>
+                {/* <motion.div variants={titleVariants} initial="initial" animate={!isBlobLoading ? "animate" : "initial"}>
                     <h1 className="font-teko text-left sm:text-right lg:text-center text-white text-6xl sm:text-9xl font-semibold uppercase pl-4 sm:pr-28 lg:p-0 leading-none">nebeyu</h1>
-                </motion.div>
-            </div> */}
-            <motion.div className="absolute bottom-[35%] md:bottom-[33%] lg:bottom-[35%] xl:bottom-8 w-full md:-z-10">
+                </motion.div> */}
+            </div>
+            {/* <motion.div className="absolute bottom-[35%] md:bottom-[33%] lg:bottom-[35%] xl:bottom-8 w-full md:-z-10">
                 <h1 className="font-teko text-left md:text-center text-white text-6xl md:text-[7rem] lg:text-[9rem] xl:text-[10rem] font-semibold uppercase pl-4 md:p-0 leading-none">dagmawi nebeyu</h1>
-            </motion.div>
+            </motion.div> */}
             <motion.div className="absolute top-[65%] md:top-[40%] lg:top-[35%] xl:top-52 md:right-12 lg:right-20 xl:right-60 w-full md:w-auto flex justify-center md:flex-col md:flex-start gap-2 md:-z-10">
                 <div style={{ clipPath: 'polygon(0 0, 100% 0, 100% 100%, 0% 100%)' }}>
                     <motion.div variants={subtitleVariants} initial="initial" animate={!isBlobLoading ? "animate" : "initial"} custom={1} className="md:mb-6 lg:mb-12">
