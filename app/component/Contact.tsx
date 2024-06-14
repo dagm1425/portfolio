@@ -41,7 +41,6 @@ const Contact: React.FC<ContactProps> = ({ setIsLinkActive }) => {
                 opacity: { duration: 0.35 },
                 duration: 0.65,
                 ease: [.215,.61,.355,1],
-                delay: 1.2, 
             }
         },
     };
