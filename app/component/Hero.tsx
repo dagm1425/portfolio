@@ -45,7 +45,7 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
             translateX: 0,
             transition: {
                 opacity: { duration: 0.35 },
-                duration: 0.65,
+                duration: 1,
                 ease: [.215,.61,.355,1],
                 delay: 1.2, 
             }
@@ -77,9 +77,9 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
             y: 0,
             opacity: 1,
             transition: {
-                duration: 0.7,
-                ease: [.215,.61,.355,1],
-                delay: 1.6 + (i * 0.2), 
+                duration: 0.9,
+                ease: [0.08,0.82,0.17,1],
+                delay: 2 + (i * 0.2), 
             }
         }),
     };
@@ -93,9 +93,9 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
             x: 0,
             opacity: 1,
             transition: {
-                duration: 0.7,
+                duration: 0.8,
                 ease: [.215,.61,.355,1],
-                delay: 2.9, 
+                delay: 3.4, 
             }
         },
     };
