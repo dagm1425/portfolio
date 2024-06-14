@@ -23,9 +23,9 @@ const Projects: React.FC<ProjectsProps> = ({ modal, setModal }) => {
       href: "https://github.com/dagm1425/shopping-cart"
     },
     {
-      title: 'Commercial Project',
-      src: "commercial-project.jpg",
-      href: ""
+      title: 'Asaita Properties',
+      src: "asaita-properties.jpg",
+      href: "https://github.com/dagm1425/commercial-project"
     },
     {
       title: 'Portfolio Website',
