@@ -11,19 +11,6 @@ interface ProjectProps {
 }
 
 const Project: React.FC<ProjectProps> = ({ project, index, setModal }) => {
-    // const [isActive, setIsActive] = useState<boolean>(false);
-
-    // const imgContainerVariants = {
-    //     initial: {
-    //         width: 0
-    //     },
-    //     open: {
-    //         width: "auto", transition: {duration: 0.4, ease: [0.23, 1, 0.32, 1]}
-    //     },
-    //     closed: {
-    //         width: 0
-    //     }
-    // }
     const title = project.title;
     const href = project.href;
     const src = project.src;
@@ -48,13 +35,6 @@ const Project: React.FC<ProjectProps> = ({ project, index, setModal }) => {
             <h2 className="text-3xl font-normal mb-1 lg:mb-0 group-hover:opacity-40 group-hover:-translate-x-2.5 transition duration-200 ease-linear">{title}</h2>
             <p className="xl:max-w-[40%] group-hover:opacity-40 group-hover:translate-x-2.5 xl:text-right transition duration-200 ease-linear">Design & Development</p>
         </a>
-        // <div className={`w-full flex items-center justify-center py-[0.8vw] cursor-pointer border-t-2 border-solid border-slate-600 ${isLast ? 'border-b-2 border-solid border-slate-600' : ''}`} onMouseEnter={() => {setIsActive(true)}} onMouseLeave={() => {setIsActive(false)}}>
-        //     <p className="text-[5vw] m-0 mr-[0.75vw]">{title1}</p>
-        //     <motion.div variants={imgContainerVariants} animate={isActive ? "open" : "closed"} className="w-0 flex justify-center overflow-hidden">
-        //         <Image src={`/images/${src}`} alt={title1.concat(title2)} width={427} height={640} className="w-[10vw]"></Image>
-        //     </motion.div>
-        //     <p className="text-[5vw] m-0 ml-[0.75vw]">{title2}</p>
-        // </div>
     )
 }
 

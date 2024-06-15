@@ -2,9 +2,6 @@
 
 import React, { Dispatch, SetStateAction, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-// import { FaInstagram } from "react-icons/fa";
-// import { CiLinkedin } from "react-icons/ci";
-// import { FaXTwitter } from "react-icons/fa6";
 import { RiSendPlaneLine } from "react-icons/ri";
 import AnimatedLink from "./navbar/AnimatedLink";
 import { motion, useInView } from "framer-motion";
@@ -70,8 +67,6 @@ const Contact: React.FC<ContactProps> = ({ setIsLinkActive }) => {
 
     return (
         <section id="contact" className="relative lg:py-4">
-            {/* <div className="font-teko text-[9rem] leading-none text-white uppercase font-semibold text-left">let&apos;s work</div> */}
-            {/* <div className="font-teko text-[9rem] leading-none text-white uppercase font-semibold text-center mb-20">together</div> */}
             <div ref={title} className="px-4 md:px-20 xl:px-32 perspective-[120px] perspective-origin-top overflow-hidden">
                 <motion.div variants={titleVariants} initial="initial" animate={isInView ? "animate" : "initial"}>
                     <h1 className="font-teko text-6xl md:text-9xl leading-none text-white uppercase font-semibold text-left">let&apos;s work</h1>
