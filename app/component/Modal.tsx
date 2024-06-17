@@ -22,7 +22,7 @@ const scaleVariants = {
     scale: 1,
     x: "-50%",
     y: "-50%",
-    transiton: {
+    transition: {
       duration: 0,
       ease: [0.45, 0, 0.55, 1],
     },
@@ -31,7 +31,7 @@ const scaleVariants = {
     scale: 0,
     x: "-50%",
     y: "-50%",
-    transiton: {
+    transition: {
       duration: 0,
       ease: [0.87, 0, 0.13, 1],
     },
