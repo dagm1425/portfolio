@@ -85,9 +85,10 @@ const Modal: React.FC<ModalProps> = ({ modal, projects }) => {
         <Image
           src={`/images/${projects[project].src}`}
           alt={projects[project].title}
-          width={300}
-          height={200}
-          className="rotate-6"
+          width="0"
+          height="0"
+          sizes="300px"
+          className="w-full h-auto rotate-6"
         />
       </motion.div>
       <motion.div
