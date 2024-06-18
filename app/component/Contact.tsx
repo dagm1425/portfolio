@@ -134,13 +134,13 @@ const Contact: React.FC<ContactProps> = ({ setIsLinkActive }) => {
               name="user_name"
               type="text"
               placeholder="NAME"
-              className="w-[47%] text-xl text-white bg-transparent py-2 px-4 sm:py-4 sm:px-5 border border-solid border-white rounded-[35px]"
+              className="w-[47%] text-md text-white bg-transparent py-2 px-4 sm:py-4 sm:px-5 border border-solid border-white rounded-[35px]"
             />
             <input
               name="user_email"
               type="email"
               placeholder="EMAIL"
-              className="w-[47%] text-xl text-white bg-transparent py-2 px-4 sm:py-4 sm:px-5 border border-solid border-white rounded-[35px]"
+              className="w-[47%] text-md text-white bg-transparent py-2 px-4 sm:py-4 sm:px-5 border border-solid border-white rounded-[35px]"
             />
           </div>
           <textarea
@@ -148,10 +148,10 @@ const Contact: React.FC<ContactProps> = ({ setIsLinkActive }) => {
             rows={4}
             required
             placeholder="MESSAGE"
-            className="w-full text-xl text-white bg-transparent py-2 px-4 sm:py-4 sm:px-5 resize-none border border-solid border-white rounded-[35px]"
+            className="w-full text-md text-white bg-transparent py-2 px-4 sm:py-4 sm:px-5 resize-none border border-solid border-white rounded-[35px]"
           />
           <button
-            className="block flex items-center gap-2 text-lg md:text-xl lg:text-lg text-white mx-auto mt-4 md:mt-8 lg:mt-6 uppercase border-none outline-none"
+            className="block flex items-center gap-2 text-lg md:text-md lg:text-lg text-white mx-auto mt-4 md:mt-8 lg:mt-6 uppercase border-none outline-none"
             onMouseEnter={() => setIsLinkActive(true)}
             onMouseLeave={() => setIsLinkActive(false)}
             onClick={() => form.current?.requestSubmit()}
