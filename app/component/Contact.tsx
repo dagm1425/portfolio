@@ -1,6 +1,12 @@
 "use client";
 
-import React, { Dispatch, SetStateAction, useRef, useState } from "react";
+import React, {
+  Dispatch,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import emailjs from "@emailjs/browser";
 import { RiSendPlaneLine } from "react-icons/ri";
 import AnimatedLink from "./navbar/AnimatedLink";
@@ -16,6 +22,7 @@ const Contact: React.FC<ContactProps> = ({ setIsLinkActive }) => {
   const [isSendingMsg, setIsSendingMsg] = useState<boolean>(false);
   const [isMsgSent, setIsMsgSent] = useState<boolean>(false);
   const [isMsgNotSent, setIsMsgNotSent] = useState<boolean>(false);
+  const [isLargeScreen, setIsLargeScreen] = useState<boolean>(true);
   const title = useRef<HTMLDivElement>(null);
   const isInView = useInView(title, { once: true });
   const socials = [
@@ -26,6 +33,15 @@ const Contact: React.FC<ContactProps> = ({ setIsLinkActive }) => {
     { title: "X/Twitter", href: "https://twitter.com/NebeyuDagmawi/" },
     { title: "Instagram", href: "https://www.instagram.com/dagmawinebeyu3/" },
   ];
+
+  useEffect(() => {
+    const handleResize = () => setIsLargeScreen(window.innerWidth >= 1024);
+    handleResize();
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
   const titleVariants = {
     initial: {
       opacity: 0,
@@ -97,17 +113,19 @@ const Contact: React.FC<ContactProps> = ({ setIsLinkActive }) => {
           variants={titleVariants}
           initial="initial"
           animate={isInView ? "animate" : "initial"}
-          className="flex items-center gap-4 ml-28"
+          className={`${isLargeScreen ? "flex items-center gap-4 ml-28" : ""}`}
         >
-          <Image
-            src={`/images/blob.jpg`}
-            alt={"blob"}
-            width={105}
-            height="0"
-            className="h-auto inline -mt-[4.75rem]"
-            unoptimized
-          />
-          <h1 className="font-teko text-6xl md:text-9xl leading-none text-white uppercase font-semibold text-right lg:text-left mb-14 lg:mb-20">
+          {isLargeScreen && (
+            <Image
+              src={`/images/blob.jpg`}
+              alt={"blob"}
+              width={105}
+              height="0"
+              className="h-auto inline -mt-[4.75rem]"
+              unoptimized
+            />
+          )}
+          <h1 className="font-teko text-6xl md:text-9xl leading-none text-white uppercase font-semibold text-left mb-14 lg:mb-20">
             together
           </h1>
         </motion.div>
