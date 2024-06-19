@@ -98,7 +98,7 @@ const Contact: React.FC<ContactProps> = ({ setIsLinkActive }) => {
     <section id="contact" className="relative lg:py-4">
       <div
         ref={title}
-        className="px-4 md:px-20 xl:px-32 perspective-[120px] perspective-origin-top overflow-hidden"
+        className="px-6 md:px-20 xl:px-32 perspective-[120px] perspective-origin-top overflow-hidden"
       >
         <motion.div
           variants={titleVariants}
