@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import React, { useEffect, useRef } from "react";
 import { ModalTyping, ProjectTyping } from "../typings";
 import { motion } from "framer-motion";
@@ -33,6 +32,15 @@ const scaleVariants = {
     transition: {
       ease: [0.87, 0, 0.13, 1],
     },
+  },
+};
+
+const imgVariants = {
+  initial: {
+    opacity: 0,
+  },
+  animate: {
+    opacity: 1,
   },
 };
 
@@ -78,16 +86,22 @@ const Modal: React.FC<ModalProps> = ({ modal, projects }) => {
         variants={scaleVariants}
         initial="initial"
         animate={isActive ? "animate" : "exit"}
-        className="absolute w-[300px] h-[400px] flex items-center justify-center overflow-hidden pointer-events-none"
+        className="absolute w-[300px] h-[200px] flex items-center justify-center overflow-hidden pointer-events-none"
       >
-        <Image
-          src={`/images/${projects[project].src}`}
-          alt={projects[project].title}
-          width="0"
-          height="0"
-          sizes="300px"
-          className="w-full h-auto rotate-6"
-        />
+        <div className="w-full h-full absolute">
+          {projects.map((project, i) => {
+            return (
+              <motion.img
+                key={i}
+                variants={imgVariants}
+                animate={modal.project === i ? "animate" : "initial"}
+                src={`/images/${project.src}`}
+                alt={project.title}
+                className="absolute top-0 left-0 w-full h-full"
+              />
+            );
+          })}
+        </div>
       </motion.div>
       <motion.div
         ref={cursor}
