@@ -5,6 +5,7 @@ import emailjs from "@emailjs/browser";
 import { RiSendPlaneLine } from "react-icons/ri";
 import AnimatedLink from "./navbar/AnimatedLink";
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 
 interface ContactProps {
   setIsLinkActive: Dispatch<SetStateAction<boolean>>;
@@ -96,8 +97,17 @@ const Contact: React.FC<ContactProps> = ({ setIsLinkActive }) => {
           variants={titleVariants}
           initial="initial"
           animate={isInView ? "animate" : "initial"}
+          className="flex items-center gap-4 ml-28"
         >
-          <h1 className="font-teko text-6xl md:text-9xl leading-none text-white uppercase font-semibold text-right lg:text-center mb-14 lg:mb-20">
+          <Image
+            src={`/images/blob.jpg`}
+            alt={"blob"}
+            width={105}
+            height="0"
+            className="h-auto inline -mt-[4.75rem]"
+            unoptimized
+          />
+          <h1 className="font-teko text-6xl md:text-9xl leading-none text-white uppercase font-semibold text-right lg:text-left mb-14 lg:mb-20">
             together
           </h1>
         </motion.div>
