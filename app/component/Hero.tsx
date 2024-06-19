@@ -133,7 +133,7 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
           initial="initial"
           animate={!isBlobLoading ? "animate" : "initial"}
         >
-          <h1 className="font-teko text-left sm:text-right lg:text-center text-white text-6xl sm:text-9xl xl:text-[11rem] font-semibold uppercase pl-4 sm:pl-28 lg:p-0 leading-none">
+          <h1 className="font-teko text-center text-white text-6xl md:text-[6.5rem] lg:text-9xl xl:text-[11rem] font-semibold uppercase leading-none">
             dagmawi nebeyu
           </h1>
         </motion.div>
