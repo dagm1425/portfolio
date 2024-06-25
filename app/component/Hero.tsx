@@ -1,10 +1,11 @@
 "use client";
 
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
-import Blob from "./Blob";
 import { animate, motion, useMotionValue } from "framer-motion";
 import { GoArrowDownRight } from "react-icons/go";
 import { PiGlobeLight } from "react-icons/pi";
+import dynamic from "next/dynamic";
+const Blob = dynamic(() => import("./Blob"), { ssr: false });
 
 interface HeroProps {
   isBlobLoading: boolean;
