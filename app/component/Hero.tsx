@@ -4,8 +4,7 @@ import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { animate, motion, useMotionValue } from "framer-motion";
 import { GoArrowDownRight } from "react-icons/go";
 import { PiGlobeLight } from "react-icons/pi";
-import dynamic from "next/dynamic";
-const Blob = dynamic(() => import("./Blob"), { ssr: false });
+import Blob from "./Blob";
 
 interface HeroProps {
   isBlobLoading: boolean;
