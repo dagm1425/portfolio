@@ -44,6 +44,7 @@ const Project: React.FC<ProjectProps> = ({ project, index, setModal }) => {
           width={500}
           height={400}
           className="mb-6"
+          unoptimized
         />
       )}
       <h2 className="text-3xl font-normal mb-1 lg:mb-0 group-hover:opacity-40 group-hover:-translate-x-2.5 transition duration-200 ease-linear">
