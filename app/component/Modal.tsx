@@ -45,7 +45,7 @@ const imgVariants = {
 };
 
 const Modal: React.FC<ModalProps> = ({ modal, projects }) => {
-  const { isActive, project } = modal;
+  const { isActive, index } = modal;
   const container = useRef<HTMLDivElement>(null);
   const cursor = useRef<HTMLDivElement>(null);
 
@@ -94,7 +94,7 @@ const Modal: React.FC<ModalProps> = ({ modal, projects }) => {
               <motion.img
                 key={i}
                 variants={imgVariants}
-                animate={modal.project === i ? "animate" : "initial"}
+                animate={index === i ? "animate" : "initial"}
                 src={`/images/${project.src}`}
                 alt={project.title}
                 className="absolute top-0 left-0 w-full h-full"

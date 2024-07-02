@@ -14,7 +14,7 @@ const Home = () => {
   const [isLinkActive, setIsLinkActive] = useState<boolean>(false);
   const [modal, setModal] = useState<ModalTyping>({
     isActive: false,
-    project: 0,
+    index: 0,
   });
   const [isBlobLoading, setIsBlobLoading] = useState<boolean>(true);
 

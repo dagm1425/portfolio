@@ -6,7 +6,7 @@ export interface ProjectTyping {
 
 export interface ModalTyping {
   isActive: boolean;
-  project: number;
+  index: number;
 }
 
 export interface SvgProps {
