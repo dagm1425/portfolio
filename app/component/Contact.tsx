@@ -119,9 +119,10 @@ const Contact: React.FC<ContactProps> = ({ setIsLinkActive }) => {
             <Image
               src={`/images/blob.jpg`}
               alt={"blob"}
-              width={105}
+              width="0"
               height="0"
-              className="h-auto inline -mt-[4.75rem]"
+              sizes="105px"
+              className="w-[105px] h-auto inline -mt-[4.75rem]"
               unoptimized
             />
           )}
