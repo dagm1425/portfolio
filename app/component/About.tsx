@@ -31,7 +31,7 @@ const About = () => {
     >
       <p
         ref={element}
-        className="flex flex-wrap text-4xl md:text-5xl lg:text-6xl text-white"
+        className="flex flex-wrap text-3xl custom-sm:text-4xl md:text-5xl lg:text-6xl text-white"
       >
         {animatedWords}
       </p>

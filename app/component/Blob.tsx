@@ -17,13 +17,15 @@ const delay = async (promise: Promise<any>) => {
 const Blob: React.FC<BlobProps> = ({ setIsBlobLoading }) => {
   const [width, setWidth] = useState<number>(0);
   const scene =
-    width < 768
-      ? "https://prod.spline.design/4fw6UsesTpkABa3N/scene.splinecode"
-      : width < 1024
-        ? "https://prod.spline.design/8TpjCUqUDCKdBWU4/scene.splinecode"
-        : width < 1440
-          ? "https://prod.spline.design/hITryAhlvsA20UJ0/scene.splinecode"
-          : "https://prod.spline.design/0Fktb5VBB3QzS3Aw/scene.splinecode";
+    width < 390
+      ? "https://prod.spline.design/tqv9arv0-Kft2EXH/scene.splinecode"
+      : width < 768
+        ? "https://prod.spline.design/4fw6UsesTpkABa3N/scene.splinecode"
+        : width < 1024
+          ? "https://prod.spline.design/8TpjCUqUDCKdBWU4/scene.splinecode"
+          : width < 1440
+            ? "https://prod.spline.design/hITryAhlvsA20UJ0/scene.splinecode"
+            : "https://prod.spline.design/0Fktb5VBB3QzS3Aw/scene.splinecode";
 
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
@@ -34,7 +36,7 @@ const Blob: React.FC<BlobProps> = ({ setIsBlobLoading }) => {
   }, []);
 
   return (
-    <div className="mt-6 md:-mt-28 lg:-mt-32 xl:-mt-20 h-[60%] md:h-auto">
+    <div className="custom-sm:mt-6 md:-mt-28 lg:-mt-32 xl:-mt-20 custom-sm:h-[60%] md:h-auto">
       <Suspense fallback={null}>
         <Spline scene={scene} onLoad={() => setIsBlobLoading(false)} />
       </Suspense>

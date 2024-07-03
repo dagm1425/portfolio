@@ -125,20 +125,23 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
   };
 
   return (
-    <section id="home" className="h-[55vh] md:h-[67vh] lg:h-[48vh] xl:h-auto">
+    <section
+      id="home"
+      className="h-[65vh] custom-sm:h-[55vh] md:h-[67vh] lg:h-[48vh] xl:h-auto"
+    >
       <Blob setIsBlobLoading={setIsBlobLoading} />
-      <div className="absolute bottom-[35%] md:bottom-[33%] lg:bottom-[35%] xl:bottom-8 w-full md:-z-10 perspective-[120px] perspective-origin-bottom overflow-hidden">
+      <div className="absolute bottom-[28%] custom-sm:bottom-[35%] md:bottom-[33%] lg:bottom-[35%] xl:bottom-8 w-full md:-z-10 perspective-[120px] perspective-origin-bottom overflow-hidden">
         <motion.div
           variants={titleVariants}
           initial="initial"
           animate={!isBlobLoading ? "animate" : "initial"}
         >
-          <h1 className="font-teko text-center text-white text-6xl md:text-[6.5rem] lg:text-9xl xl:text-[11rem] font-semibold uppercase leading-none">
+          <h1 className="font-teko text-center text-white text-5xl custom-sm:text-6xl md:text-[6.5rem] lg:text-9xl xl:text-[11rem] font-semibold uppercase leading-none">
             dagmawi nebeyu
           </h1>
         </motion.div>
       </div>
-      <motion.div className="absolute top-[65%] md:top-[40%] lg:top-[35%] xl:top-52 md:right-12 lg:right-20 xl:right-60 w-full md:w-auto flex justify-center md:flex-col md:flex-start gap-2 md:-z-10">
+      <motion.div className="absolute top-[72%] custom-sm:top-[65%] md:top-[40%] lg:top-[35%] xl:top-52 md:right-12 lg:right-20 xl:right-60 w-full md:w-auto flex justify-center md:flex-col md:flex-start gap-2 md:-z-10">
         <div style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)" }}>
           <motion.div
             variants={subtitleVariants}
@@ -147,7 +150,7 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
             custom={1}
             className="md:mb-6 lg:mb-12"
           >
-            <GoArrowDownRight className="text-white text-[2.25rem]" />
+            <GoArrowDownRight className="text-white text-2xl custom-sm:text-[2.25rem]" />
           </motion.div>
         </div>
         <div style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)" }}>
@@ -156,7 +159,7 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
             initial="initial"
             animate={!isBlobLoading ? "animate" : "initial"}
             custom={2}
-            className="text-2xl md:text-3xl text-white uppercase font-normal mb-1"
+            className="text-xl custom-sm:text-2xl md:text-3xl text-white uppercase font-normal mb-1"
           >
             front-end
           </motion.p>
@@ -167,7 +170,7 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
             initial="initial"
             animate={!isBlobLoading ? "animate" : "initial"}
             custom={3}
-            className="text-2xl md:text-3xl text-white uppercase font-normal"
+            className="text-xl custom-sm:text-2xl md:text-3xl text-white uppercase font-normal"
           >
             developer
           </motion.p>
@@ -177,7 +180,7 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
         variants={subtitleVariants2}
         initial="initial"
         animate={!isBlobLoading ? "animate" : "initial"}
-        className="absolute bottom-[46%] md:bottom-[46%] lg:bottom-[49%] xl:bottom-80 left-0 flex items-center gap-3 md:gap-4 lg:gap-5 text-white uppercase p-3 pl-6 lg:pl-12 xl:pl-16 bg-white bg-opacity-[0.1] rounded-r-full sm:-z-10"
+        className="absolute bottom-[38%] custom-sm:bottom-[46%] md:bottom-[46%] lg:bottom-[49%] xl:bottom-80 left-0 flex items-center gap-3 md:gap-4 lg:gap-5 text-white uppercase p-3 pl-6 lg:pl-12 xl:pl-16 bg-white bg-opacity-[0.1] rounded-r-full sm:-z-10"
       >
         <div className="pr-11 lg:pr-14 sm:py-1">
           <motion.p className="text-sm md:text-xl md:mb-1">working</motion.p>
