@@ -10,7 +10,7 @@ const Spline = lazy(() => delay(import("@splinetool/react-spline")));
 
 const delay = async (promise: Promise<any>) => {
   return new Promise((resolve) => {
-    setTimeout(resolve, 2500);
+    setTimeout(resolve, 1700);
   }).then(() => promise);
 };
 
