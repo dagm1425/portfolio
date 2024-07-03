@@ -53,7 +53,7 @@ const Navbar: React.FC<NavbarProps> = ({ setIsLinkActive }) => {
         <h1 className="font-teko text-4xl md:text-5xl mr-auto">
           <a href="#home">D | N</a>
         </h1>
-        <div className="flex gap-4 md:gap-10 lg:gap-12 text-sm md:text-lg xl:text-sm font-medium uppercase -mt-2">
+        <div className="flex gap-4 md:gap-10 lg:gap-12 text-xs custom-sm:text-sm md:text-lg xl:text-sm font-medium uppercase -mt-2">
           {navLinks
             .filter((_, i) => i !== 0)
             .map((link, i) => (
@@ -114,7 +114,7 @@ const ScrollNavbar: React.FC<ScrollNavbarProps> = ({
       animate={isScrolling ? "animate" : "initial"}
       exit="initial"
       variants={navVariants}
-      className="fixed left-1/2 top-4 flex justify-center gap-7 sm:gap-9 text-white text-sm md:text-lg xl:text-sm font-medium bg-[#ffffff14] backdrop-blur-lg uppercase px-8 py-2 border rounded-[32px] border-[#ffffff14] z-10"
+      className="fixed left-1/2 top-4 flex justify-center gap-5 custom-sm:gap-7 sm:gap-9 text-white text-xs custom-sm:text-sm md:text-lg xl:text-sm font-medium bg-[#ffffff14] backdrop-blur-lg uppercase px-6 custom-sm:px-8 py-2 border rounded-[32px] border-[#ffffff14] z-10"
     >
       {navLinks.map((link, i) => {
         return (
