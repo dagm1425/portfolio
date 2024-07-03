@@ -5,6 +5,7 @@ import { animate, motion, useMotionValue } from "framer-motion";
 import { GoArrowDownRight } from "react-icons/go";
 import { PiGlobeLight } from "react-icons/pi";
 import Blob from "./Blob";
+import useViewportWidth from "../utils/useViewportWidth";
 
 interface HeroProps {
   isBlobLoading: boolean;
@@ -13,7 +14,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
   const zIndex = useMotionValue(30);
-  const [width, setWidth] = useState<number>(0);
+  const width = useViewportWidth();
   const noOfBlinders = width < 1440 ? 5 : 10;
   const blindersArr = Array.from(Array(noOfBlinders).keys());
 
@@ -22,14 +23,6 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
       animate(zIndex, -10, { delay: 1.2 });
     }
   }, [isBlobLoading, zIndex]);
-
-  useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   const titleVariants = {
     initial: {

@@ -12,6 +12,7 @@ import { RiSendPlaneLine } from "react-icons/ri";
 import AnimatedLink from "./navbar/AnimatedLink";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
+import useViewportWidth from "../utils/useViewportWidth";
 
 interface ContactProps {
   setIsLinkActive: Dispatch<SetStateAction<boolean>>;
@@ -19,10 +20,11 @@ interface ContactProps {
 
 const Contact: React.FC<ContactProps> = ({ setIsLinkActive }) => {
   const form = useRef<HTMLFormElement>(null);
+  const width = useViewportWidth();
+  const isDesktop = width > 1024;
   const [isSendingMsg, setIsSendingMsg] = useState<boolean>(false);
   const [isMsgSent, setIsMsgSent] = useState<boolean>(false);
   const [isMsgNotSent, setIsMsgNotSent] = useState<boolean>(false);
-  const [isLargeScreen, setIsLargeScreen] = useState<boolean>(true);
   const title = useRef<HTMLDivElement>(null);
   const isInView = useInView(title, { once: true });
   const socials = [
@@ -33,14 +35,6 @@ const Contact: React.FC<ContactProps> = ({ setIsLinkActive }) => {
     { title: "X/Twitter", href: "https://twitter.com/NebeyuDagmawi/" },
     { title: "Instagram", href: "https://www.instagram.com/dagmawinebeyu3/" },
   ];
-
-  useEffect(() => {
-    const handleResize = () => setIsLargeScreen(window.innerWidth >= 1024);
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   const titleVariants = {
     initial: {
@@ -113,9 +107,9 @@ const Contact: React.FC<ContactProps> = ({ setIsLinkActive }) => {
           variants={titleVariants}
           initial="initial"
           animate={isInView ? "animate" : "initial"}
-          className={`${isLargeScreen ? "flex items-center gap-4 ml-28" : ""}`}
+          className={`${isDesktop ? "flex items-center gap-4 ml-28" : ""}`}
         >
-          {isLargeScreen && (
+          {isDesktop && (
             <Image
               src={`/images/blob.jpg`}
               alt={"blob"}

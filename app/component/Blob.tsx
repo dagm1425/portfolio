@@ -1,6 +1,7 @@
 "use client";
 
-import React, { lazy, Suspense, useEffect, useState } from "react";
+import React, { lazy, Suspense } from "react";
+import useViewportWidth from "../utils/useViewportWidth";
 
 interface BlobProps {
   setIsBlobLoading: (value: boolean) => void;
@@ -15,7 +16,7 @@ const delay = async (promise: Promise<any>) => {
 };
 
 const Blob: React.FC<BlobProps> = ({ setIsBlobLoading }) => {
-  const [width, setWidth] = useState<number>(0);
+  const width = useViewportWidth();
   const scene =
     width < 390
       ? "https://prod.spline.design/tqv9arv0-Kft2EXH/scene.splinecode"
@@ -26,14 +27,6 @@ const Blob: React.FC<BlobProps> = ({ setIsBlobLoading }) => {
           : width < 1440
             ? "https://prod.spline.design/hITryAhlvsA20UJ0/scene.splinecode"
             : "https://prod.spline.design/0Fktb5VBB3QzS3Aw/scene.splinecode";
-
-  useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
-    handleResize();
-
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
 
   return (
     <div className="custom-sm:mt-6 md:-mt-28 lg:-mt-32 xl:-mt-20 custom-sm:h-[60%] md:h-auto">

@@ -3,6 +3,7 @@
 import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { ModalTyping, ProjectTyping } from "../typings";
 import Image from "next/image";
+import useViewportWidth from "../utils/useViewportWidth";
 
 interface ProjectProps {
   project: ProjectTyping;
@@ -14,20 +15,8 @@ const Project: React.FC<ProjectProps> = ({ project, index, setModal }) => {
   const title = project.title;
   const href = project.href;
   const src = project.src;
-  const [isDesktop, setIsDesktop] = useState<Boolean>(true);
-
-  useEffect(() => {
-    const resize = () => {
-      setIsDesktop(window.innerWidth > 1024);
-    };
-
-    window.addEventListener("resize", resize);
-    resize();
-
-    return () => {
-      window.removeEventListener("resize", resize);
-    };
-  }, []);
+  const width = useViewportWidth();
+  const isDesktop = width > 1024;
 
   return (
     <a
