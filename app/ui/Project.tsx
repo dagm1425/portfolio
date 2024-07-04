@@ -36,10 +36,14 @@ const Project: React.FC<ProjectProps> = ({ project, index, setModal }) => {
           unoptimized
         />
       )}
-      <h2 className="text-3xl font-normal mb-1 lg:mb-0 group-hover:opacity-40 group-hover:-translate-x-2.5 transition duration-200 ease-linear">
+      <h2
+        className={`text-3xl font-normal mb-1 lg:mb-0 transition duration-200 ease-linear ${isDesktop ? "group-hover:opacity-40 group-hover:-translate-x-2.5" : ""}`}
+      >
         {title}
       </h2>
-      <p className="xl:max-w-[40%] group-hover:opacity-40 group-hover:translate-x-2.5 xl:text-right transition duration-200 ease-linear">
+      <p
+        className={`xl:max-w-[40%] xl:text-right transition duration-200 ease-linear ${isDesktop ? "group-hover:opacity-40 group-hover:translate-x-2.5" : ""}`}
+      >
         Design & Development
       </p>
     </a>
