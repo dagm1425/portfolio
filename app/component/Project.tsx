@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import { ModalTyping, ProjectTyping } from "../typings";
 import Image from "next/image";
 import useViewportWidth from "../utils/useViewportWidth";
