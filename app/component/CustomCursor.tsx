@@ -12,12 +12,12 @@ const CustomCursor: React.FC<CustomCursorProps> = ({ isLinkActive, modal }) => {
 
   useEffect(() => {
     const moveCursorX = gsap.quickTo(cursor.current, "left", {
-      duration: 0.4,
-      ease: "power1.easeOut",
+      duration: 0.5,
+      ease: "back.out(1.7)",
     });
     const moveCursorY = gsap.quickTo(cursor.current, "top", {
-      duration: 0.4,
-      ease: "power1.easeOut",
+      duration: 0.5,
+      ease: "back.out(1.7)",
     });
 
     window.addEventListener("mousemove", (e) => {
