@@ -5,7 +5,7 @@ import { animate, motion, useMotionValue } from "framer-motion";
 import { GoArrowDownRight } from "react-icons/go";
 import { PiGlobeLight } from "react-icons/pi";
 import Blob from "./Blob";
-import useViewportWidth from "../utils/useViewportWidth";
+import useViewportWidth from "../lib/useViewportWidth";
 
 interface HeroProps {
   isBlobLoading: boolean;

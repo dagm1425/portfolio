@@ -6,7 +6,7 @@ import { RiSendPlaneLine } from "react-icons/ri";
 import AnimatedLink from "./navbar/AnimatedLink";
 import { motion, useInView } from "framer-motion";
 import Image from "next/image";
-import useViewportWidth from "../utils/useViewportWidth";
+import useViewportWidth from "../lib/useViewportWidth";
 
 interface ContactProps {
   setIsLinkActive: Dispatch<SetStateAction<boolean>>;

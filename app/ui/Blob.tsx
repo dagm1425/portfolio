@@ -1,7 +1,7 @@
 "use client";
 
 import React, { lazy, Suspense } from "react";
-import useViewportWidth from "../utils/useViewportWidth";
+import useViewportWidth from "../lib/useViewportWidth";
 
 interface BlobProps {
   setIsBlobLoading: (value: boolean) => void;

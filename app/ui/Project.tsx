@@ -3,7 +3,7 @@
 import React, { Dispatch, SetStateAction } from "react";
 import { ModalTyping, ProjectTyping } from "../typings";
 import Image from "next/image";
-import useViewportWidth from "../utils/useViewportWidth";
+import useViewportWidth from "../lib/useViewportWidth";
 
 interface ProjectProps {
   project: ProjectTyping;

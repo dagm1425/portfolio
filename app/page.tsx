@@ -1,14 +1,14 @@
 "use client";
 
 import { useState } from "react";
-import About from "./component/About";
-import Navbar from "./component/navbar/Navbar";
-import CustomCursor from "./component/CustomCursor";
-import Projects from "./component/Projects";
-import TechStack from "./component/TechStack";
-import Hero from "./component/Hero";
+import About from "./ui/About";
+import Navbar from "./ui/navbar/Navbar";
+import CustomCursor from "./ui/CustomCursor";
+import Projects from "./ui/Projects";
+import TechStack from "./ui/TechStack";
+import Hero from "./ui/Hero";
 import { ModalTyping } from "./typings";
-import Contact from "./component/Contact";
+import Contact from "./ui/Contact";
 
 const Home = () => {
   const [isLinkActive, setIsLinkActive] = useState<boolean>(false);
