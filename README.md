@@ -1,6 +1,6 @@
 # Dagmawi Nebeyu's portfolio website.
 
-### [Visit Website](https://dagmawinebeyu.com)
+### <a href="https://dagmawinebeyu.com" target="_blank">Visit Website</a>
 
 ### Built using:
 - Next.js
