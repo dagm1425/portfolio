@@ -32,7 +32,7 @@ const CustomCursor: React.FC<CustomCursorProps> = ({ isLinkActive, modal }) => {
     <div
       ref={cursor}
       className={`
-        hidden xl:block fixed w-5 h-5 -ml-2 -mt-2 rounded-[50%] transition
+        hidden xl:block fixed w-5 h-5 -ml-2 -mt-2 rounded-[50%] transition duration-200
         ease-in origin-center z-40 pointer-events-none 
         ${
           isLinkActive
