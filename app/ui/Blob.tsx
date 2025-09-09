@@ -29,7 +29,7 @@ const Blob: React.FC<BlobProps> = ({ setIsBlobLoading }) => {
             : "https://prod.spline.design/0Fktb5VBB3QzS3Aw/scene.splinecode";
 
   return (
-    <div className="custom-sm:mt-6 md:-mt-28 lg:-mt-32 xl:-mt-20 custom-sm:h-[60%] md:h-auto">
+    <div className="custom-sm:mt-6 md:-mt-28 lg:-mt-32 xl:-mt-[13rem] 2xl:-mt-20 xl:ml-[8rem] 2xl:ml-0 custom-sm:h-[60%] md:h-auto">
       <Suspense fallback={null}>
         <Spline scene={scene} onLoad={() => setIsBlobLoading(false)} />
       </Suspense>

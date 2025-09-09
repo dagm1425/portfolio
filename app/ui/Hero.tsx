@@ -120,7 +120,7 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
   return (
     <section
       id="home"
-      className="h-[65vh] custom-sm:h-[55vh] md:h-[67vh] lg:h-[48vh] xl:h-auto"
+      className="h-[65vh] custom-sm:h-[55vh] md:h-[67vh] lg:h-[48vh] xl:h-[100vh] 2xl:h-auto"
     >
       <Blob setIsBlobLoading={setIsBlobLoading} />
       <div className="absolute bottom-[28%] custom-sm:bottom-[35%] md:bottom-[33%] lg:bottom-[35%] xl:bottom-8 w-full md:-z-10 perspective-[120px] perspective-origin-bottom overflow-hidden">
