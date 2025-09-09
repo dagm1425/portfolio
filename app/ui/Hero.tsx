@@ -179,7 +179,7 @@ const Hero: React.FC<HeroProps> = ({ isBlobLoading, setIsBlobLoading }) => {
           <motion.p className="text-sm md:text-xl md:mb-1">working</motion.p>
           <motion.p className="text-sm md:text-xl">worldwide</motion.p>
         </div>
-        <motion.div className="w-fit bg-[#1e1e21] p-2 sm:p-4 rounded-[50%] -translate-x-1/2 -mr-6 md:-mr-8">
+        <motion.div className="w-fit bg-[#0c0c0e] p-2 sm:p-4 rounded-[50%] -translate-x-1/2 -mr-6 md:-mr-8">
           <PiGlobeLight className="text-4xl sm:text-[2.75rem]" />
         </motion.div>
       </motion.div>

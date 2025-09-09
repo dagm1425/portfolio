@@ -43,7 +43,7 @@ const Row: React.FC<RowProps> = ({ svgData, x }) => {
       {svgData.map((item, index) => (
         <div
           key={index}
-          className="w-[11rem] h-[5.5rem] flex-none sm:h-32 grid place-items-center backdrop-brightness-[1.25] rounded-2xl"
+          className="w-[11rem] h-[5.5rem] flex-none sm:h-32 grid place-items-center backdrop-brightness-[1.40] rounded-2xl"
         >
           <item.svg color="#fff" width={50} height={50} />
         </div>
