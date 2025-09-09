@@ -3,8 +3,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { SvgProps } from "../typings/index";
 import {
-  Html,
-  Css,
   Js,
   Ts,
   ReactJs,
@@ -12,6 +10,8 @@ import {
   RestApi,
   Redux,
   Firebase,
+  Aws,
+  Python,
   Jest,
   Sass,
   TailwindCss,
@@ -71,8 +71,6 @@ const TechStack = () => {
     [0, height * -translationRate],
   );
   const svgData = [
-    { title: "HTML", svg: Html },
-    { title: "CSS", svg: Css },
     { title: "Javascript", svg: Js },
     { title: "Typescript", svg: Ts },
     { title: "React", svg: ReactJs },
@@ -80,6 +78,8 @@ const TechStack = () => {
     { title: "Redux", svg: Redux },
     { title: "RestApi", svg: RestApi },
     { title: "Firebase", svg: Firebase },
+    { title: "AWS", svg: Aws },
+    { title: "Python", svg: Python },
     { title: "Jest", svg: Jest },
     { title: "SASS", svg: Sass },
     { title: "Tailwind CSS", svg: TailwindCss },
