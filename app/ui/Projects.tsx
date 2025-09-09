@@ -13,7 +13,7 @@ interface ProjectsProps {
 const Projects: React.FC<ProjectsProps> = ({ modal, setModal }) => {
   const projects: ProjectTyping[] = [
     {
-      title: "ChatApp",
+      title: "WeConnect",
       src: "chat-app.jpg",
       href: "https://github.com/dagm1425/chat-app",
     },
